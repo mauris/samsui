@@ -6,7 +6,7 @@ class ObjectCollection
 {
     protected $items = array();
 
-    public function add($name, $object)
+    public function set($name, $object)
     {
         $this->items[$name] = $object;
     }
