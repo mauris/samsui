@@ -19,3 +19,19 @@ Samsui is a PHP library that manages its dependencies using [Composer](http://ge
 Then just run composer:
 
     $ php composer.phar install
+
+##Usage
+
+You can provide definition of your objects to Samsui:
+
+	use Samsui\Factory;
+
+	$factory = new Factory();
+	$factory->define('person')
+		->sequence('personId')
+		->attr('name', function () {
+			return 'Charles Daniels';	
+		})
+		->attr('createdDateTime', function () {
+			return time();
+		}); 
