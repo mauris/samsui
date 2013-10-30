@@ -6,4 +6,16 @@ Samsui is a factory library for building PHP objects useful for setting up test 
 
 With Samsui, you can quickly build prototype application and generate as many data as you need for testing your prototype.
 
-Stay tuned to find out more.
+##Installation
+
+Samsui is a PHP library that manages its dependencies using [Composer](http://getcomposer.org). You can directly use Samsui in your application through Composer as well:
+
+    {
+        "require": {
+			"mauris/samsui": "1.0.*"
+        }
+    }
+
+Then just run composer:
+
+    $ php composer.phar install
