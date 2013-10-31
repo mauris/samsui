@@ -16,7 +16,7 @@ class Factory implements FactoryInterface
 
     }
 
-    public function build($name)
+    public function build($name, $quantity = 1)
     {
 
     }

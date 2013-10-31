@@ -6,5 +6,5 @@ interface FactoryInterface
 {
     public function define($name);
 
-    public function build($name);
+    public function build($name, $quantity = 1);
 }
