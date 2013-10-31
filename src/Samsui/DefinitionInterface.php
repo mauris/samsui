@@ -2,7 +2,7 @@
 
 namespace Samsui;
 
-interface BuildDefinitionInterface
+interface DefinitionInterface
 {
     public function sequence($name);
 

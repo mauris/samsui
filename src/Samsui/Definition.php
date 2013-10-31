@@ -2,7 +2,7 @@
 
 namespace Samsui;
 
-class BuildDefinition implements BuildDefinitionInterface
+class Definition implements DefinitionInterface
 {
     protected $attributes = array();
 
