@@ -24,5 +24,20 @@ class Definition implements DefinitionInterface
 
     public function build()
     {
+        $objData = array();
+
+        foreach ($this->sequences as $name => &$value) {
+            $objData[$name] = $value;
+            ++$value;
+        }
+
+        foreach ($this->values as $name => &$value) {
+            $attrValue = $value;
+            if ($value instanceof \Closure) {
+                $attrValue = call_user_func($attrValue);
+            }
+        }
+
+        return (object)$objData;
     }
 }
