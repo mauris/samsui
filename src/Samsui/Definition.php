@@ -13,6 +13,7 @@ class Definition implements DefinitionInterface
     public function sequence($name)
     {
         $this->sequences[] = $name;
+        return $this;
     }
 
     public function attr($name, $value)
@@ -20,6 +21,7 @@ class Definition implements DefinitionInterface
         if (!isset($this->values[$name])) {
             $this->values[$name] = $value;
         }
+        return $this;
     }
 
     public function build()
