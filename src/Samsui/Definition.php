@@ -10,6 +10,9 @@ class Definition implements DefinitionInterface
 
     public function sequence($name)
     {
+        if (!isset($this->sequences[$name])) {
+            $this->sequences[$name] = 1;
+        }
     }
 
     public function attr($name, $value)
