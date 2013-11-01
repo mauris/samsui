@@ -4,7 +4,9 @@ namespace Samsui;
 
 class Definition implements DefinitionInterface
 {
-    protected $attributes = array();
+    protected $sequences = array();
+
+    protected $values = array();
 
     public function sequence($name)
     {
