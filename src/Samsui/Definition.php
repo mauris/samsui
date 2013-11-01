@@ -37,6 +37,7 @@ class Definition implements DefinitionInterface
             if ($value instanceof \Closure) {
                 $attrValue = call_user_func($attrValue, $this->sequence);
             }
+            $objData[$name] = $attrValue;
         }
         ++$this->sequence;
 
