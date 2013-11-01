@@ -17,6 +17,9 @@ class Definition implements DefinitionInterface
 
     public function attr($name, $value)
     {
+        if (!isset($this->values[$name])) {
+            $this->values[$name] = $value;
+        }
     }
 
     public function build()
