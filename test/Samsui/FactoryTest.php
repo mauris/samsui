@@ -3,6 +3,7 @@
 namespace Samsui;
 
 use \PHPUnit_Framework_TestCase;
+use Packfire\FuelBlade\Container;
 
 class FactoryTest extends PHPUnit_Framework_TestCase
 {
@@ -40,5 +41,16 @@ class FactoryTest extends PHPUnit_Framework_TestCase
     {
         $factory = new Factory();
         $object = $factory->build('test');
+    }
+
+    public function testInverseOfControl()
+    {
+        $container = new Container();
+        $container['Samsui\\DefinitionInterface'] = $container->instance('Samsui\\MockDefinition');
+
+        $factory = new Factory();
+        $factory($container);
+        $definition = $factory->define('test');
+        $this->assertInstanceOf('Samsui\\MockDefinition', $definition);
     }
 }
