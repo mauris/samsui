@@ -4,20 +4,54 @@ namespace Samsui;
 
 class Definition implements DefinitionInterface
 {
+    /**
+     * Build sequence number
+     * @var int
+     * @since 1.0.0
+     */
     protected $sequence = 1;
 
+    /**
+     * An array of sequencing attributes
+     * @var array
+     * @since 1.0.0
+     */
     protected $sequences = array();
 
+    /**
+     * An array of value attributes
+     * Closures may be added to this array that will be resolved later.
+     * @var array
+     * @since 1.0.0
+     */
     protected $values = array();
 
+    /**
+     * An array of closures that will act like the object's methods.
+     * @var array
+     * @since 1.0.0
+     */
     protected $methods = array();
 
+    /**
+     * Define a sequencing attribute to the object definition
+     * @param string $name The name of the attribute
+     * @return Samsui\Definition Returns the Definition for method chaining
+     * @since 1.0.0
+     */
     public function sequence($name)
     {
         $this->sequences[] = $name;
         return $this;
     }
 
+    /**
+     * Define an attribute to the object definition
+     * @param string $name The name of the attribute
+     * @param mixed|callable The value set to the attribute. If the attribute set is callable, at build-time the value returned from the callable will be inserted.
+     * @return Samsui\Definition Returns the Definition for method chaining
+     * @since 1.0.0
+     */
     public function attr($name, $value)
     {
         if (!isset($this->values[$name])) {
@@ -26,6 +60,13 @@ class Definition implements DefinitionInterface
         return $this;
     }
 
+    /**
+     * Define a function to the object definition to act as an object method
+     * @param string $name The name of the method
+     * @param callable $closure The function or closure to be assigned.
+     * @return Samsui\Definition Returns the Definition for method chaining
+     * @since 1.0.0
+     */
     public function method($name, $closure)
     {
         if (is_callable($closure) && !isset($this->methods[$name])) {
@@ -34,6 +75,11 @@ class Definition implements DefinitionInterface
         return $this;
     }
 
+    /**
+     * Build the definition into a representative object
+     * @return Samsui\Wrapper Returns the wrapper object encapsulating the compiled properties and methods.
+     * @since 1.0.0
+     */
     public function build()
     {
         $properties = array();
