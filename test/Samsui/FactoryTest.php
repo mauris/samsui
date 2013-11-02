@@ -32,4 +32,13 @@ class FactoryTest extends PHPUnit_Framework_TestCase
         $this->assertCount(5, $objects);
         $this->assertInstanceOf('Samsui\\Wrapper', $objects[0]);
     }
+
+    /**
+     * @expectedException \Exception
+     */
+    public function testExceptionBuild()
+    {
+        $factory = new Factory();
+        $object = $factory->build('test');
+    }
 }
