@@ -38,6 +38,7 @@ class Factory implements FactoryInterface, ConsumerInterface
             }
             return $result;
         }
+        throw new \Exception('Tried to build undefined Samsui definition "' . $name . '".');
     }
 
     public function __invoke($container)
