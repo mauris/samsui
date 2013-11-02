@@ -12,15 +12,11 @@ class DefinitionTest extends PHPUnit_Framework_TestCase
         $definition->sequence('name')->sequence('number');
 
         $obj1 = $definition->build();
-        $this->assertTrue(property_exists($obj1, 'name'));
-        $this->assertTrue(property_exists($obj1, 'number'));
         $this->assertEquals(1, $obj1->name);
         $this->assertEquals(1, $obj1->number);
 
         for ($i = 2; $i < 10; ++$i) {
             $obj = $definition->build();
-            $this->assertTrue(property_exists($obj, 'name'));
-            $this->assertTrue(property_exists($obj, 'number'));
             $this->assertEquals($i, $obj->name);
             $this->assertEquals($i, $obj->number);
         }
@@ -36,17 +32,35 @@ class DefinitionTest extends PHPUnit_Framework_TestCase
             });
 
         $obj1 = $definition->build();
-        $this->assertTrue(property_exists($obj1, 'age'));
-        $this->assertTrue(property_exists($obj1, 'category'));
         $this->assertEquals(10, $obj1->age);
         $this->assertEquals(1, $obj1->category);
 
         for ($i = 2; $i < 10; ++$i) {
             $obj = $definition->build();
-            $this->assertTrue(property_exists($obj, 'age'));
-            $this->assertTrue(property_exists($obj, 'category'));
             $this->assertEquals(10, $obj->age);
             $this->assertEquals($i, $obj->category);
+        }
+    }
+
+    public function testMethods()
+    {
+        $definition = new Definition();
+        $definition
+            ->method('code', function () {
+                return true;
+            })
+            ->method('repeat', function ($text) {
+                return $text;
+            });
+
+        $obj1 = $definition->build();
+        $this->assertEquals(true, $obj1->code());
+        $this->assertEquals('test', $obj1->repeat('test'));
+
+        for ($i = 2; $i < 10; ++$i) {
+            $obj = $definition->build();
+            $this->assertEquals(true, $obj->code());
+            $this->assertEquals('test', $obj->repeat('test'));
         }
     }
 }
