@@ -13,7 +13,10 @@ class Factory implements FactoryInterface
 
     public function define($name)
     {
-
+        if (!isset($this->objects[$name])) {
+            $this->objects[$name] = new Definition();
+        }
+        return $this->objects[$name];
     }
 
     public function build($name, $quantity = 1)
