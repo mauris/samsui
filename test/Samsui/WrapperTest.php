@@ -33,4 +33,17 @@ class WrapperTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals('John Sim', $wrapper->name);
     }
+
+    public function testMethod()
+    {
+        $wrapper = new Wrapper(
+            array(),
+            array(
+                'number' => function () {
+                    return 3;
+                }
+            )
+        );
+        $this->assertEquals(3, $wrapper->number());
+    }
 }
