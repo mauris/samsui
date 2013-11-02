@@ -20,18 +20,18 @@ class Factory implements FactoryInterface, ConsumerInterface
 
     public function define($name)
     {
-        if (!isset($this->objects[$name])) {
-            $this->objects[$name] = new Definition();
+        if (!$this->objects->get($name)) {
+            $this->objects->set($name, $this->container['Samsui\\DefinitionInterface']);
         }
-        return $this->objects[$name];
+        return $this->objects->get($name);
     }
 
     public function build($name, $quantity = 1)
     {
-        if (isset($this->objects[$name])) {
+        if ($definition = $this->objects->get($name)) {
             $result = array();
             for ($i = 0; $i < $quantity; ++$i) {
-                $result[] = $this->objects[$name]->build();
+                $result[] = $definition->build();
             }
             if ($quantity == 1) {
                 $result = $result[0];
