@@ -46,4 +46,17 @@ class WrapperTest extends PHPUnit_Framework_TestCase
         );
         $this->assertEquals(3, $wrapper->number());
     }
+
+    /**
+     * @expectedException \Exception
+     */
+    public function testMethodFail()
+    {
+        $wrapper = new Wrapper(
+            array(),
+            array()
+        );
+
+        $wrapper->noExists();
+    }
 }
