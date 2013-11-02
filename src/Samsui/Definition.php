@@ -36,10 +36,10 @@ class Definition implements DefinitionInterface
 
     public function build()
     {
-        $objData = array();
+        $properties = array();
 
         foreach ($this->sequences as $name) {
-            $objData[$name] = $this->sequence;
+            $properties[$name] = $this->sequence;
         }
 
         foreach ($this->values as $name => &$value) {
@@ -47,10 +47,10 @@ class Definition implements DefinitionInterface
             if ($value instanceof \Closure) {
                 $attrValue = call_user_func($attrValue, $this->sequence);
             }
-            $objData[$name] = $attrValue;
+            $properties[$name] = $attrValue;
         }
         ++$this->sequence;
 
-        return (object)$objData;
+        return new Wrapper($properties, $this->methods);
     }
 }
