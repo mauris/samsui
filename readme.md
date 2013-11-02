@@ -27,6 +27,8 @@ You can provide definition of your objects to Samsui:
 	use Samsui\Factory;
 
 	$factory = new Factory();
+
+	// define an object quickly
 	$factory->define('person')
 		->sequence('personId')
 		->attr('name', function () {
@@ -35,3 +37,11 @@ You can provide definition of your objects to Samsui:
 		->attr('createdDateTime', function () {
 			return time();
 		}); 
+
+You can build one at a time, or hundreds of them on the go!
+
+	// build them on the go!
+	$person = $factory->build('person');
+	
+	// or build many!~
+	$people = $factory->build('person', 100);
