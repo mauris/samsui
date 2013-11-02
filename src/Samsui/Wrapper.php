@@ -48,5 +48,6 @@ class Wrapper
         if (isset($this->methods[$name])) {
             return call_user_func_array($this->methods[$name], $arguments);
         }
+        throw new \Exception('Tried to call unknown method in Samsui wrapper object "' . $name . '()"');
     }
 }
