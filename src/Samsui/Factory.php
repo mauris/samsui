@@ -21,6 +21,15 @@ class Factory implements FactoryInterface
 
     public function build($name, $quantity = 1)
     {
-
+        if (isset($this->objects[$name])) {
+            $result = array();
+            for ($i = 0; $i < $quantity; ++$i) {
+                $result[] = $this->objects[$name]->build();
+            }
+            if ($quantity == 1) {
+                $result = $result[0];
+            }
+            return $result;
+        }
     }
 }
