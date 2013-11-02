@@ -20,4 +20,17 @@ class WrapperTest extends PHPUnit_Framework_TestCase
         unset($wrapper->name);
         $this->assertFalse(isset($wrapper->name));
     }
+
+    public function testSerialize()
+    {
+        $wrapper = new Wrapper(
+            array('name' => 'John Sim'),
+            array()
+        );
+
+        $serialized = serialize($wrapper);
+        $wrapper = unserialize($serialized);
+
+        $this->assertEquals('John Sim', $wrapper->name);
+    }
 }
