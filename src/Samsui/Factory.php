@@ -2,13 +2,20 @@
 
 namespace Samsui;
 
-class Factory implements FactoryInterface
+use Packfire\FuelBlade\ConsumerInterface;
+use Packfire\FuelBlade\Container;
+
+class Factory implements FactoryInterface, ConsumerInterface
 {
+    protected $container;
+
     protected $objects;
 
     public function __construct()
     {
         $this->objects = new ObjectCollection();
+        $this->container = new Container();
+        $this->container['Samsui\\DefinitionInterface'] = $this->container->instance('Samsui\\Definition');
     }
 
     public function define($name)
@@ -31,5 +38,10 @@ class Factory implements FactoryInterface
             }
             return $result;
         }
+    }
+
+    public function __invoke($container)
+    {
+        $this->container = $container;
     }
 }
