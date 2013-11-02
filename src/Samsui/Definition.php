@@ -10,6 +10,8 @@ class Definition implements DefinitionInterface
 
     protected $values = array();
 
+    protected $methods = array();
+
     public function sequence($name)
     {
         $this->sequences[] = $name;
@@ -20,6 +22,14 @@ class Definition implements DefinitionInterface
     {
         if (!isset($this->values[$name])) {
             $this->values[$name] = $value;
+        }
+        return $this;
+    }
+
+    public function method($name, $closure)
+    {
+        if (is_callable($closure) && !isset($this->methods[$name])) {
+            $this->methods[$name] = $closure;
         }
         return $this;
     }
