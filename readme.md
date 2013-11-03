@@ -57,3 +57,18 @@ The output of a person object would be:
         email: 'james.clark@example.com',
         createdTime: 1383465074
     }
+
+##Upcoming
+
+- Implementation of Data Generators for use with attributes
+  - Names (different locale)
+  - Email addresses
+  - Addresses (from different countries) and Postal Codes
+  - Age (based on age groups defined)
+  - Gender
+  - Lorem Ipsum text
+  - DateTimes (based on range or sequence)
+  - Serial numbers (barcode standards)
+  - Hash functions output (SHA-1, SHA-256 etc.)
+  - 
+- Generation of Factory definitions to classes directly
