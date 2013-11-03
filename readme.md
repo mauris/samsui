@@ -31,17 +31,19 @@ You can provide definition of your objects to Samsui:
 	// define an object quickly
 	$factory->define('person')
 		->sequence('personId')
-		->attr('name', function () {
-			return 'Charles Daniels';	
-		})
+		->attr('firstName', 'James')
+        ->attr('lastName', 'Clark')
+        ->attr('email', function ($i, $o) {
+            return $o->firstName . '.' . $o->lastName . '@example.com';
+        })
 		->attr('createdDateTime', function () {
 			return time();
-		}); 
+		});
 
 You can build one at a time, or hundreds of them on the go!
 
 	// build them on the go!
 	$person = $factory->build('person');
-	
+
 	// or build many!~
-	$people = $factory->build('person', 100);
+	$people = $factory->build('person', 500);
