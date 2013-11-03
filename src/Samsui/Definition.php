@@ -9,7 +9,7 @@ class Definition implements DefinitionInterface
      * @var int
      * @since 1.0.0
      */
-    protected $sequence = 1;
+    protected $sequence = 0;
 
     /**
      * An array of sequencing attributes
@@ -82,6 +82,7 @@ class Definition implements DefinitionInterface
      */
     public function build()
     {
+        ++$this->sequence;
         $properties = array();
 
         foreach ($this->sequences as $name) {
@@ -89,14 +90,9 @@ class Definition implements DefinitionInterface
         }
 
         foreach ($this->values as $name => &$value) {
-            $attrValue = $value;
-            if ($value instanceof \Closure) {
-                $attrValue = call_user_func($attrValue, $this->sequence);
-            }
-            $properties[$name] = $attrValue;
+            $properties[$name] = $value;
         }
-        ++$this->sequence;
 
-        return new Wrapper($properties, $this->methods);
+        return new Wrapper($properties, $this->methods, $this->sequence);
     }
 }

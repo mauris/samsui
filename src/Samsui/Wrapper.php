@@ -8,10 +8,13 @@ class Wrapper
 
     protected $methods = array();
 
-    public function __construct($properties, $methods)
+    protected $sequence = 0;
+
+    public function __construct($properties, $methods, $sequence = 0)
     {
         $this->properties = $properties;
         $this->methods = $methods;
+        $this->sequence = $sequence;
     }
 
     public function __sleep()
@@ -25,7 +28,11 @@ class Wrapper
 
     public function __get($name)
     {
-        return $this->properties[$name];
+        $value = $this->properties[$name];
+        if ($value instanceof \Closure) {
+            $value = call_user_func($value, $this->sequence, $this);
+        }
+        return $value;
     }
 
     public function __set($name, $value)
