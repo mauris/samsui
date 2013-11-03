@@ -34,9 +34,9 @@ You can provide definition of your objects to Samsui:
 		->attr('firstName', 'James')
         ->attr('lastName', 'Clark')
         ->attr('email', function ($i, $o) {
-            return $o->firstName . '.' . $o->lastName . '@example.com';
+            return strtolower($o->firstName . '.' . $o->lastName . '@example.com');
         })
-		->attr('createdDateTime', function () {
+		->attr('createdTime', function () {
 			return time();
 		});
 
@@ -47,3 +47,13 @@ You can build one at a time, or hundreds of them on the go!
 
 	// or build many!~
 	$people = $factory->build('person', 500);
+
+The output of a person object would be:
+
+    {
+        personId: 1,
+        firstName: 'James',
+        lastName: 'Clark',
+        email: 'james.clark@example.com',
+        createdTime: 1383465074
+    }
