@@ -70,5 +70,6 @@ The output of a person object would be:
   - DateTimes (based on range or sequence)
   - Serial numbers (barcode standards)
   - Hash functions output (SHA-1, SHA-256 etc.)
-  - 
-- Generation of Factory definitions to classes directly
+  - GPS latitude / longitude
+  - Handphone numbers (based on country formats)
+- Generation of Factory definitions to PHP classes directly
