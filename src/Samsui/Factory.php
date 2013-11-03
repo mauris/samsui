@@ -7,8 +7,18 @@ use Packfire\FuelBlade\Container;
 
 class Factory implements FactoryInterface, ConsumerInterface
 {
+    /**
+     * The FuelBlade IoC container
+     * @var Packfire\FuelBlade\ConainerInterface
+     * @since 1.0.0
+     */
     protected $container;
 
+    /**
+     * The collection of object definitions
+     * @var Samsui\ObjectCollection
+     * @since 1.0.0
+     */
     protected $objects;
 
     /**
