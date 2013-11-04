@@ -21,4 +21,22 @@ class MathnTest extends PHPUnit_Framework_TestCase
         $this->assertInternalType('int', $number);
         $this->assertEquals(8, strlen((string)$number));
     }
+
+    public function testRandomDigit()
+    {
+        $provider = new Math();
+        $number = $provider->randomDigit();
+        $this->assertInternalType('int', $number);
+        $this->assertEquals(1, strlen((string)$number));
+        $this->assertTrue($number >= 0 && $number <= 9);
+    }
+
+    public function testRandomDigitNonZero()
+    {
+        $provider = new Math();
+        $number = $provider->randomDigitNonZero();
+        $this->assertInternalType('int', $number);
+        $this->assertEquals(1, strlen((string)$number));
+        $this->assertTrue($number >= 1 && $number <= 9);
+    }
 }
