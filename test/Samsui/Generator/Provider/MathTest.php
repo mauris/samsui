@@ -65,4 +65,13 @@ class MathnTest extends PHPUnit_Framework_TestCase
         $key = $provider->randomArrayKey($array);
         $this->assertNull($key);
     }
+
+    public function testRandomArrayValue()
+    {
+        $provider = new Math();
+        $array = array('a', 'b', 'c');
+        $value = $provider->randomArrayValue($array);
+        $this->assertTrue(in_array($value, $array));
+        $this->assertInternalType('string', $value);
+    }
 }
