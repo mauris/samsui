@@ -48,4 +48,21 @@ class MathnTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(1, strlen($char));
         $this->assertTrue(ord($char) >= 97 && ord($char) <= 122);
     }
+
+    public function testRandomArrayKey()
+    {
+        $provider = new Math();
+        $array = array('a', 'b', 'c');
+        $key = $provider->randomArrayKey($array);
+        $this->assertTrue(isset($array[$key]));
+        $this->assertInternalType('int', $key);
+    }
+
+    public function testRandomArrayKeyNull()
+    {
+        $provider = new Math();
+        $array = array();
+        $key = $provider->randomArrayKey($array);
+        $this->assertNull($key);
+    }
 }
