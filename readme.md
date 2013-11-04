@@ -72,4 +72,5 @@ The output of a person object would be:
   - Hash functions output (SHA-1, SHA-256 etc.)
   - GPS latitude / longitude
   - Handphone numbers (based on country formats)
+  - Random amount of money
 - Generation of Factory definitions to PHP classes directly
