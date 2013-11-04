@@ -2,6 +2,8 @@
 
 namespace Samsui\Generator;
 
-interface GeneratorInterface
+use Packfire\FuelBlade\ConsumerInterface;
+
+interface GeneratorInterface extends ConsumerInterface
 {
 }
