@@ -58,6 +58,35 @@ The output of a person object would be:
         createdTime: 1383465074
     }
 
+You can also use Samsui's fake data generator to fill your objects with real variety:
+
+  use Samsui\Factory;
+  use Samsui\Generator\Generator;
+
+  $factory = new Factory();
+
+    // define an object quickly
+    $factory->define('person')
+        ->sequence('personId')
+        ->attr('firstName', Generator::person()->firstName)
+        ->attr('lastName', Generator::person()->lastName)
+        ->attr('email', function ($i, $o) {
+            return Generator::email()->emailAddress(
+                array(
+                    'firstName' => $o->firstName,
+                    'lastName' => $o->lastName,
+                    'domains' => array(
+                        'hotmail.com',
+                        'gmail.com',
+                        'example.com'
+                    )
+                )
+            );
+        })
+        ->attr('createdTime', function () {
+            return time();
+        });
+
 ##Upcoming
 
 - Implementation of Data Generators for use with attributes
