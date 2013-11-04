@@ -26,4 +26,9 @@ class Math implements ProviderInterface
     {
         return $this->randomNumber(1);
     }
+
+    public function randomAlphabet()
+    {
+        return chr($this->between(97, 122));
+    }
 }

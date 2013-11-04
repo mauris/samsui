@@ -39,4 +39,13 @@ class MathnTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(1, strlen((string)$number));
         $this->assertTrue($number >= 1 && $number <= 9);
     }
+
+    public function testRandomAlphabet()
+    {
+        $provider = new Math();
+        $char = $provider->randomAlphabet();
+        $this->assertInternalType('string', $char);
+        $this->assertEquals(1, strlen($char));
+        $this->assertTrue(ord($char) >= 97 && ord($char) <= 122);
+    }
 }
