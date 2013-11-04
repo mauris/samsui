@@ -31,4 +31,19 @@ class Math implements ProviderInterface
     {
         return chr($this->between(97, 122));
     }
+
+    public function randomArrayKey(array $arr)
+    {
+        if (!$arr) {
+            return null;
+        }
+
+        return array_rand($arr);
+    }
+
+    public function randomArrayValue(array $arr)
+    {
+        $key = $this->randomArrayKey($arr);
+        return $key ? $arr[$key] : null;
+    }
 }
