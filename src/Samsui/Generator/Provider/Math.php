@@ -16,4 +16,14 @@ class Math implements ProviderInterface
             $upper ?: pow(10, $digits) - 1
         );
     }
+
+    public function randomDigit()
+    {
+        return $this->between(0, 9);
+    }
+
+    public function randomDigitNonZero()
+    {
+        return $this->randomNumber(1);
+    }
 }
