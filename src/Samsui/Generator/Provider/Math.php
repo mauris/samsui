@@ -44,6 +44,6 @@ class Math implements ProviderInterface
     public function randomArrayValue(array $arr)
     {
         $key = $this->randomArrayKey($arr);
-        return $key ? $arr[$key] : null;
+        return $key === null ? null : $arr[$key];
     }
 }
