@@ -83,4 +83,12 @@ class MathnTest extends PHPUnit_Framework_TestCase
         $this->assertTrue(in_array($value, array_keys($array)));
         $this->assertInternalType('string', $value);
     }
+
+    public function testRandomWeightedArrayEmpty()
+    {
+        $provider = new Math($this->getMock('Samsui\\Generator\\GeneratorInterface'));
+        $array = array();
+        $value = $provider->randomWeightedArray($array);
+        $this->assertNull($value);
+    }
 }
