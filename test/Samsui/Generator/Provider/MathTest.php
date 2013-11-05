@@ -8,7 +8,7 @@ class MathnTest extends PHPUnit_Framework_TestCase
 {
     public function testBetween()
     {
-        $provider = new Math();
+        $provider = new Math($this->getMock('Samsui\\Generator\\GeneratorInterface'));
         $number = $provider->between(1, 4);
         $this->assertInternalType('int', $number);
         $this->assertTrue($number >= 1 && $number <= 4);
@@ -16,7 +16,7 @@ class MathnTest extends PHPUnit_Framework_TestCase
 
     public function testRandomNumber()
     {
-        $provider = new Math();
+        $provider = new Math($this->getMock('Samsui\\Generator\\GeneratorInterface'));
         $number = $provider->randomNumber(8);
         $this->assertInternalType('int', $number);
         $this->assertEquals(8, strlen((string)$number));
@@ -24,7 +24,7 @@ class MathnTest extends PHPUnit_Framework_TestCase
 
     public function testRandomDigit()
     {
-        $provider = new Math();
+        $provider = new Math($this->getMock('Samsui\\Generator\\GeneratorInterface'));
         $number = $provider->randomDigit();
         $this->assertInternalType('int', $number);
         $this->assertEquals(1, strlen((string)$number));
@@ -33,7 +33,7 @@ class MathnTest extends PHPUnit_Framework_TestCase
 
     public function testRandomDigitNonZero()
     {
-        $provider = new Math();
+        $provider = new Math($this->getMock('Samsui\\Generator\\GeneratorInterface'));
         $number = $provider->randomDigitNonZero();
         $this->assertInternalType('int', $number);
         $this->assertEquals(1, strlen((string)$number));
@@ -42,7 +42,7 @@ class MathnTest extends PHPUnit_Framework_TestCase
 
     public function testRandomAlphabet()
     {
-        $provider = new Math();
+        $provider = new Math($this->getMock('Samsui\\Generator\\GeneratorInterface'));
         $char = $provider->randomAlphabet();
         $this->assertInternalType('string', $char);
         $this->assertEquals(1, strlen($char));
@@ -51,7 +51,7 @@ class MathnTest extends PHPUnit_Framework_TestCase
 
     public function testRandomArrayKey()
     {
-        $provider = new Math();
+        $provider = new Math($this->getMock('Samsui\\Generator\\GeneratorInterface'));
         $array = array('a', 'b', 'c');
         $key = $provider->randomArrayKey($array);
         $this->assertTrue(isset($array[$key]));
@@ -60,7 +60,7 @@ class MathnTest extends PHPUnit_Framework_TestCase
 
     public function testRandomArrayKeyNull()
     {
-        $provider = new Math();
+        $provider = new Math($this->getMock('Samsui\\Generator\\GeneratorInterface'));
         $array = array();
         $key = $provider->randomArrayKey($array);
         $this->assertNull($key);
@@ -68,7 +68,7 @@ class MathnTest extends PHPUnit_Framework_TestCase
 
     public function testRandomArrayValue()
     {
-        $provider = new Math();
+        $provider = new Math($this->getMock('Samsui\\Generator\\GeneratorInterface'));
         $array = array('a', 'b', 'c');
         $value = $provider->randomArrayValue($array);
         $this->assertTrue(in_array($value, $array));

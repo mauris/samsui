@@ -2,7 +2,7 @@
 
 namespace Samsui\Generator\Provider;
 
-class Math implements ProviderInterface
+class Math extends BaseProvider
 {
     public function between($lower = null, $upper = null)
     {

@@ -2,6 +2,6 @@
 
 namespace Samsui\Generator\Provider;
 
-class Age implements ProviderInterface
+class Age extends BaseProvider
 {
 }
