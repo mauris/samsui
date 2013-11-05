@@ -46,4 +46,18 @@ class Math extends BaseProvider
         $key = $this->randomArrayKey($arr);
         return $key === null ? null : $arr[$key];
     }
+
+    public function randomWeightedArray(array $arr)
+    {
+        $total = array_sum($arr);
+        $selection = $this->between(0, $total);
+        $index = 0;
+        foreach ($arr as $item => $weight) {
+            $index += $weight;
+            if ($index >= $selection) {
+                return $item;
+            }
+        }
+        return null;
+    }
 }
