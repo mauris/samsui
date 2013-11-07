@@ -60,10 +60,10 @@ The output of a person object would be:
 
 You can also use Samsui's fake data generator to fill your objects with real variety:
 
-  use Samsui\Factory;
-  use Samsui\Generator\Generator;
+    use Samsui\Factory;
+    use Samsui\Generator\Generator;
 
-  $factory = new Factory();
+    $factory = new Factory();
 
     // define an object quickly
     $factory->define('person')
