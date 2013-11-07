@@ -14,4 +14,10 @@ class GeneratorTest extends PHPUnit_Framework_TestCase
         $generator->registerProvider('math', $provider);
         $this->assertEquals($provider, $generator->math);
     }
+
+    public function testGetNull()
+    {
+        $generator = new Generator();
+        $this->assertNull($generator->math);
+    }
 }
