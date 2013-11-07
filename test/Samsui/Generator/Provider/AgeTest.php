@@ -22,4 +22,12 @@ class AgeTest extends PHPUnit_Framework_TestCase
         $this->assertInternalType('int', $number);
         $this->assertTrue($number >= 1 && $number <= 4);
     }
+
+    public function testPick()
+    {
+        $provider = new Age($this->generator);
+        $number = $provider->pick(1, 6, 3);
+        $this->assertInternalType('int', $number);
+        $this->assertTrue(in_array($number, array(1, 6, 3)));
+    }
 }
