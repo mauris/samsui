@@ -30,4 +30,20 @@ class AgeTest extends PHPUnit_Framework_TestCase
         $this->assertInternalType('int', $number);
         $this->assertTrue(in_array($number, array(1, 6, 3)));
     }
+
+    public function testGroups1()
+    {
+        $provider = new Age($this->generator);
+        $number = $provider->groups(array(10, 13));
+        $this->assertInternalType('int', $number);
+        $this->assertTrue(in_array($number, array(10, 11, 12, 13)));
+    }
+
+    public function testGroups2()
+    {
+        $provider = new Age($this->generator);
+        $number = $provider->groups(array(10, 13), array(5, 8));
+        $this->assertInternalType('int', $number);
+        $this->assertTrue(in_array($number, array(10, 11, 12, 13, 5, 6, 7, 8)));
+    }
 }
