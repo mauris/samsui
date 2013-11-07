@@ -4,7 +4,7 @@ namespace Samsui\Generator\Provider;
 
 use \PHPUnit_Framework_TestCase;
 
-class MathnTest extends PHPUnit_Framework_TestCase
+class MathTest extends PHPUnit_Framework_TestCase
 {
     public function testBetween()
     {
