@@ -29,7 +29,7 @@ class Generator implements GeneratorInterface
 
     public static function __callStatic($method, $args)
     {
-        if (!$instance) {
+        if (!self::$instance) {
             self::$instance = new self();
         }
         return self::$instance->$method;

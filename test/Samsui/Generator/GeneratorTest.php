@@ -20,4 +20,13 @@ class GeneratorTest extends PHPUnit_Framework_TestCase
         $generator = new Generator();
         $this->assertNull($generator->math);
     }
+
+    public function testSyntacticSugar()
+    {
+        $this->assertNull(Generator::instance());
+        $this->assertNull(Generator::math());
+        $provider = new Math(new Generator());
+        Generator::instance()->registerProvider('math', $provider);
+        $this->assertEquals($provider, Generator::math());
+    }
 }
