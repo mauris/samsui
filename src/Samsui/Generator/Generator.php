@@ -22,15 +22,16 @@ class Generator implements GeneratorInterface
         }
     }
 
-    public static function loadInstance(GeneratorInterface $instance)
+    public static function instance()
     {
-        self::$instance = $instance;
+        return self::$instance;
     }
 
     public static function __callStatic($method, $args)
     {
-        if ($instance) {
-            return self::$instance->$method;
+        if (!$instance) {
+            self::$instance = new self();
         }
+        return self::$instance->$method;
     }
 }
