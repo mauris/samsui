@@ -8,7 +8,7 @@ With Samsui, you can quickly build prototype application and generate as many da
 
 ##Installation
 
-Samsui is a PHP library that manages its dependencies using [Composer](http://getcomposer.org). You can directly use Samsui in your application through Composer as well:
+Samsui is a PHP library that manages its dependencies using [Composer](http://getcomposer.org). You can directly use [Samsui](https://packagist.org/packages/mauris/samsui/) in your application through Composer as well:
 
     {
         "require": {
@@ -16,7 +16,7 @@ Samsui is a PHP library that manages its dependencies using [Composer](http://ge
         }
     }
 
-Then just run composer:
+Then just run Composer:
 
     $ php composer.phar install
 
@@ -48,7 +48,7 @@ You can build one at a time, or hundreds of them on the go!
 	// or build many!~
 	$people = $factory->build('person', 500);
 
-The output of a person object would be:
+The output of a person object would be (well, after JSON encoding):
 
     {
         personId: 1,
@@ -58,7 +58,7 @@ The output of a person object would be:
         createdTime: 1383465074
     }
 
-You can also use Samsui's fake data generator to fill your objects with real variety:
+You can also use Samsui's fake data generator to fill your objects with real variety and randomity:
 
     use Samsui\Factory;
     use Samsui\Generator\Generator;
@@ -93,7 +93,7 @@ You can also use Samsui's fake data generator to fill your objects with real var
   - Names (different locale)
   - Email addresses
   - Addresses (from different countries) and Postal Codes
-  - Age (based on age groups defined)
+  - <del>Age (based on age groups defined)</del>
   - Gender
   - Lorem Ipsum text
   - DateTimes (based on range or sequence)
