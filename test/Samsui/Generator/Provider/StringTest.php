@@ -31,6 +31,7 @@ class StringTest extends PHPUnit_Framework_TestCase
         $this->assertInternalType('string', $str);
         $this->assertEquals(4, strlen($str));
         $this->assertEquals('t', substr($str, 0, 1));
+        $this->assertNotEquals('??', substr($str, 1, 2));
         $this->assertEquals('t', substr($str, -1, 1));
     }
 }
