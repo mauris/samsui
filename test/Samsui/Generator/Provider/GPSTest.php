@@ -19,6 +19,7 @@ class GPSTest extends PHPUnit_Framework_TestCase
     {
         $provider = new GPS($this->generator);
         $latitude = $provider->latitude();
+        $this->assertInternalType('float', $latitude);
         $this->assertTrue($latitude >= -90 && $latitude <= 90);
     }
 
@@ -26,6 +27,16 @@ class GPSTest extends PHPUnit_Framework_TestCase
     {
         $provider = new GPS($this->generator);
         $longitude = $provider->longitude();
+        $this->assertInternalType('float', $longitude);
         $this->assertTrue($longitude >= -180 && $longitude <= 180);
+    }
+
+    public function testLatLon()
+    {
+        $provider = new GPS($this->generator);
+        $latlon = $provider->latlon();
+        $this->assertInternalType('array', $latlon);
+        $this->assertTrue($latlon['latitude'] >= -90 && $latlon['latitude'] <= 90);
+        $this->assertTrue($latlon['longitude'] >= -180 && $latlon['longitude'] <= 180);
     }
 }
