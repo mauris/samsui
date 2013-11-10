@@ -6,7 +6,16 @@ class Math extends BaseProvider
 {
     public function between($lower = null, $upper = null)
     {
-        return mt_rand($lower ?: 0, $upper ?: PHP_INT_MAX);
+        $lower = $lower ?: 0;
+        $upper = $upper ?: PHP_INT_MAX;
+        if ($lower == $upper) {
+            return $lower;
+        } elseif ($lower > $upper) {
+            $temp = $lower;
+            $lower = $upper;
+            $upper = $temp;
+        }
+        return mt_rand($lower, $upper);
     }
 
     public function randomNumber($digits, $upper = null)
