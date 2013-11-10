@@ -23,4 +23,14 @@ class StringTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(1, strlen($char));
         $this->assertTrue(ord($char) >= 97 && ord($char) <= 122);
     }
+
+    public function testFormat()
+    {
+        $provider = new String($this->generator);
+        $str = $provider->format('t??t');
+        $this->assertInternalType('string', $str);
+        $this->assertEquals(4, strlen($str));
+        $this->assertEquals('t', substr($str, 0, 1));
+        $this->assertEquals('t', substr($str, -1, 1));
+    }
 }
