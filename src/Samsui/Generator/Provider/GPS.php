@@ -15,4 +15,12 @@ class GPS extends BaseProvider
         $longitude = $this->generator->math->between(-180000, 180000) / 1000;
         return $longitude;
     }
+
+    public function latlon()
+    {
+        return array(
+           'latitude' => $this->latitude(),
+            'longitude' => $this->longitude()
+        );
+    }
 }
