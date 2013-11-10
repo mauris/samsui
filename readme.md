@@ -94,12 +94,12 @@ You can also use Samsui's fake data generator to fill your objects with real var
   - Email addresses
   - Addresses (from different countries) and Postal Codes
   - <del>Age (based on age groups defined)</del>
-  - Gender
+  - <del>Gender (with Natural Birth Ratio)</del>
   - Lorem Ipsum text
   - DateTimes (based on range or sequence)
   - Serial numbers (barcode standards)
   - Hash functions output (SHA-1, SHA-256 etc.)
-  - GPS latitude / longitude
+  - <del>GPS latitude / longitude</del>
   - Handphone numbers (based on country formats)
   - Random amount of money
 - Generation of Factory definitions to PHP classes directly
