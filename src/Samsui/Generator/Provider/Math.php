@@ -27,11 +27,6 @@ class Math extends BaseProvider
         return $this->randomNumber(1);
     }
 
-    public function randomAlphabet()
-    {
-        return chr($this->between(97, 122));
-    }
-
     public function randomArrayKey(array $arr)
     {
         if (!$arr) {
