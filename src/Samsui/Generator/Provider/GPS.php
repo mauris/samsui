@@ -9,4 +9,10 @@ class GPS extends BaseProvider
         $latitude = $this->generator->math->between(-90000, 90000) / 1000;
         return $latitude;
     }
+
+    public function longitude()
+    {
+        $longitude = $this->generator->math->between(-180000, 180000) / 1000;
+        return $longitude;
+    }
 }
