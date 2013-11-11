@@ -6,13 +6,13 @@ class GPS extends BaseProvider
 {
     public function latitude()
     {
-        $latitude = $this->generator->math->between(-90000000, 90000000) / 1000000;
+        $latitude = $this->generator->math->between(-90, 90, 6);
         return $latitude;
     }
 
     public function longitude()
     {
-        $longitude = $this->generator->math->between(-180000000, 180000000) / 1000000;
+        $longitude = $this->generator->math->between(-180, 180, 6);
         return $longitude;
     }
 
