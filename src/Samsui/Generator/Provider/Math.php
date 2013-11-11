@@ -16,7 +16,7 @@ class Math extends BaseProvider
             $upper = $temp;
         }
         $diff = $upper - $lower;
-        $random = round($lower + (mt_rand(0, mt_getrandmax()) / mt_getrandmax()), $precision);
+        $random = round($lower + (mt_rand(0, mt_getrandmax()) / mt_getrandmax() * $diff), $precision);
         if ($precision == 0) {
             $random = (int)$random;
         }
