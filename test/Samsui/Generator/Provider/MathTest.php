@@ -14,6 +14,22 @@ class MathTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($number >= 1 && $number <= 4);
     }
 
+    public function testBetweenInverted()
+    {
+        $provider = new Math($this->getMock('Samsui\\Generator\\GeneratorInterface'));
+        $number = $provider->between(4, 1);
+        $this->assertInternalType('int', $number);
+        $this->assertTrue($number >= 1 && $number <= 4);
+    }
+
+    public function testBetweenSame()
+    {
+        $provider = new Math($this->getMock('Samsui\\Generator\\GeneratorInterface'));
+        $number = $provider->between(4, 4);
+        $this->assertInternalType('int', $number);
+        $this->assertEquals(4, $number);
+    }
+
     public function testRandomNumber()
     {
         $provider = new Math($this->getMock('Samsui\\Generator\\GeneratorInterface'));
