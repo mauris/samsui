@@ -23,4 +23,16 @@ class GPS extends BaseProvider
             'longitude' => $this->longitude()
         );
     }
+
+    public function land()
+    {
+        $data = json_decode(file_get_contents(__DIR__ . '/Resource/land-gps.json'), true);
+        $area = $this->generator->math->randomArrayValue($data);
+        $latitude = $this->generator->math->between($area['min'][0], $area['max'][0]);
+        $longitude = $this->generator->math->between($area['min'][1], $area['max'][1]);
+        return array(
+            'latitude' => $latitude,
+            'longitude' => $longitude
+        );
+    }
 }
