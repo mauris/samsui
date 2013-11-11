@@ -4,7 +4,7 @@ namespace Samsui\Generator\Provider;
 
 class Math extends BaseProvider
 {
-    public function between($lower = null, $upper = null)
+    public function between($lower = null, $upper = null, $precision = 0)
     {
         $lower = $lower ?: 0;
         $upper = $upper ?: PHP_INT_MAX;
@@ -15,7 +15,12 @@ class Math extends BaseProvider
             $lower = $upper;
             $upper = $temp;
         }
-        return mt_rand($lower, $upper);
+        $diff = $upper - $lower;
+        $random = round($lower + (mt_rand(0, mt_getrandmax()) / mt_getrandmax()), $precision);
+        if ($precision == 0) {
+            $random = (int)$random;
+        }
+        return $random;
     }
 
     public function randomNumber($digits, $upper = null)
