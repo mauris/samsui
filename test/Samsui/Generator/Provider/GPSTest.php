@@ -39,4 +39,13 @@ class GPSTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($latlon['latitude'] >= -90 && $latlon['latitude'] <= 90);
         $this->assertTrue($latlon['longitude'] >= -180 && $latlon['longitude'] <= 180);
     }
+
+    public function testLand()
+    {
+        $provider = new GPS($this->generator);
+        $latlon = $provider->land();
+        $this->assertInternalType('array', $latlon);
+        $this->assertTrue($latlon['latitude'] >= -90 && $latlon['latitude'] <= 90);
+        $this->assertTrue($latlon['longitude'] >= -180 && $latlon['longitude'] <= 180);
+    }
 }
