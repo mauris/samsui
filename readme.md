@@ -99,7 +99,7 @@ You can also use Samsui's fake data generator to fill your objects with real var
   - DateTimes (based on range or sequence)
   - Serial numbers (barcode standards)
   - Hash functions output (SHA-1, SHA-256 etc.)
-  - <del>GPS latitude / longitude</del>
+  - <del>GPS latitude / longitude</del> and paths
   - Handphone numbers (based on country formats)
-  - Random amount of money
+  - Random amount of money, colors
 - Generation of Factory definitions to PHP classes directly
