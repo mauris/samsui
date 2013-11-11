@@ -21,8 +21,7 @@ class String extends BaseProvider
             : 'abcdefghijklmnopqrstuvwxyz1234567890';
         $result = '';
         $charsetLength = strlen($charset);
-        while($length-- > 0)
-        {
+        while ($length-- > 0) {
             $result .= substr($charset, $this->generator->math->between(0, $charsetLength - 1), 1);
         }
         return $result;
