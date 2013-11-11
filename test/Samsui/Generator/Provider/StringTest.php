@@ -34,4 +34,12 @@ class StringTest extends PHPUnit_Framework_TestCase
         $this->assertNotEquals('??', substr($str, 1, 2));
         $this->assertEquals('t', substr($str, -1, 1));
     }
+
+    public function testAlphanumeric()
+    {
+        $provider = new String($this->generator);
+        $str = $provider->alphanumeric(4);
+        $this->assertInternalType('string', $str);
+        $this->assertEquals(4, strlen($str));
+    }
 }
