@@ -13,4 +13,18 @@ class String extends BaseProvider
     {
         return preg_replace_callback('/\?/u', array($this, 'alphabet'), $format);
     }
+
+    public function alphanumeric($length, $mixedCase = false)
+    {
+        $charset = $mixedCase
+            ? 'abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+            : 'abcdefghijklmnopqrstuvwxyz1234567890';
+        $result = '';
+        $charsetLength = strlen($charset);
+        while($length-- > 0)
+        {
+            $result .= substr($charset, $this->generator->math->between(0, $charsetLength - 1), 1);
+        }
+        return $result;
+    }
 }
