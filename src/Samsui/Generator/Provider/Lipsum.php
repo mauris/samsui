@@ -62,9 +62,21 @@ class Lipsum extends BaseProvider
         return implode(' ', $result);
     }
 
-    public function sentence()
+    public function sentence($numberOfWords = null)
     {
-        $words = $this->words($this->generator->math->between(3, 12));
+        if (!$numberOfWords) {
+            $numberOfWords = $this->generator->math->between(3, 12);
+        }
+        $words = $this->words($numberOfWords);
         return ucfirst($words) . '.';
+    }
+
+    public function paragraph($numberOfSentence = null)
+    {
+        $result = array();
+        while ($numberOfSentence-- > 0) {
+            $result[] = $this->sentence();
+        }
+        return implode(' ', $result);
     }
 }
