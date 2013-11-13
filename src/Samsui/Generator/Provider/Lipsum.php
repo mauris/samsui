@@ -82,4 +82,16 @@ class Lipsum extends BaseProvider
         }
         return implode(' ', $result);
     }
+
+    public function paragraphs($numberOfParagraphs = null, $breakline = "\n\n")
+    {
+        if (!$numberOfParagraphs) {
+            $numberOfParagraphs = $this->generator->math->between(2, 6);
+        }
+        $result = array();
+        while ($numberOfParagraphs-- > 0) {
+            $result[] = $this->paragraph();
+        }
+        return implode($breakline, $result);
+    }
 }
