@@ -95,7 +95,9 @@ You can also use Samsui's fake data generator to fill your objects with real var
   - Addresses (from different countries) and Postal Codes
   - <del>Age (based on age groups defined)</del>
   - <del>Gender (with Natural Birth Ratio)</del>
-  - Lorem Ipsum text
+  - Ip Address <del>v4</del> and v6
+  - HTTP/HTTPS URL
+  - <del>Lorem Ipsum text</del>
   - DateTimes (based on range or sequence)
   - Serial numbers (barcode standards)
   - Hash functions output (SHA-1, SHA-256 etc.)
