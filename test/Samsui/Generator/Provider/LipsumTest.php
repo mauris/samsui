@@ -49,6 +49,7 @@ class LipsumTest extends PHPUnit_Framework_TestCase
     public function testParagraphs()
     {
         $provider = new Lipsum($this->generator);
+        $this->assertRegExp('/^(([A-Z]{1}[a-z\. ]+)+(\n\n|\Z))+$/', $provider->paragraphs());
         $this->assertRegExp('/^(([A-Z]{1}[a-z\. ]+)+(\n\n|\Z))+$/', $provider->paragraphs(4));
     }
 }
