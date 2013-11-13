@@ -44,7 +44,7 @@ class Lipsum extends BaseProvider
         'maiores', 'doloribus', 'asperiores', 'repellat', 'sollicitudin', 'tempus',
         'proin', 'lacinia', 'lacus', 'gravida', 'donec', 'felis', 'viverra',
         'orci', 'morbi', 'vivamus', 'arcu', 'mollis', 'libero', 'liberatus',
-        'rutrum', 'tortor', 'semper', 'pharetra', 'eros', 'cura', 'faucibus', 'is', 'fi', 'le'
+        'rutrum', 'tortor', 'semper', 'pharetra', 'eros', 'cura', 'faucibus', 'is', 'fi', 'le',
         'lecidus', 'rum', 'de', 'desil', 'erus'
     );
 
