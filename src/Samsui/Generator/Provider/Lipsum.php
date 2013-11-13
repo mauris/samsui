@@ -73,6 +73,9 @@ class Lipsum extends BaseProvider
 
     public function paragraph($numberOfSentence = null)
     {
+        if (!$numberOfSentence) {
+            $numberOfSentence = $this->generator->math->between(1, 9);
+        }
         $result = array();
         while ($numberOfSentence-- > 0) {
             $result[] = $this->sentence();
