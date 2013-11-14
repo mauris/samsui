@@ -53,4 +53,13 @@ class IpAddressTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(0, $parts[2]);
         $this->assertEquals(0, $parts[3]);
     }
+
+    public function testV6()
+    {
+        $provider = new IpAddress($this->generator);
+        $ip = $provider->v6();
+        $this->assertRegExp('/^[a-f0-9]{4}\:[a-f0-9]{4}\:[a-f0-9]{4}\:[a-f0-9]{4}\:[a-f0-9]{4}\:[a-f0-9]{4}\:[a-f0-9]{4}\:[a-f0-9]{4}$/', $ip);
+        $parts = explode(':', $ip);
+        $this->assertCount(8, $parts);
+    }
 }
