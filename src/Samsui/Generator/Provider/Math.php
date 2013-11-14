@@ -4,6 +4,15 @@ namespace Samsui\Generator\Provider;
 
 class Math extends BaseProvider
 {
+
+    public function hex($number, $length = null)
+    {
+        if (is_int($number)) {
+            $number = str_pad(dechex($number), $length ?: 0, '0', STR_PAD_LEFT);
+        }
+        return $number;
+    }
+
     public function between($lower = null, $upper = null, $precision = 0)
     {
         $lower = $lower ?: 0;
