@@ -98,4 +98,13 @@ class MathTest extends PHPUnit_Framework_TestCase
         $value = $provider->randomWeightedArray($array);
         $this->assertNull($value);
     }
+
+    public function testHex()
+    {
+        $provider = new Math($this->getMock('Samsui\\Generator\\GeneratorInterface'));
+        $value = $provider->hex(15);
+        $this->assertEquals('f', $value);
+        $value = $provider->hex(15, 3);
+        $this->assertEquals('00f', $value);
+    }
 }
