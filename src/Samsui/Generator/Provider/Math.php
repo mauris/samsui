@@ -4,7 +4,6 @@ namespace Samsui\Generator\Provider;
 
 class Math extends BaseProvider
 {
-
     public function hex($number, $length = null)
     {
         if (is_int($number)) {
