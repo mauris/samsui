@@ -95,7 +95,7 @@ You can also use Samsui's fake data generator to fill your objects with real var
   - Addresses (from different countries) and Postal Codes
   - <del>Age (based on age groups defined)</del>
   - <del>Gender (with Natural Birth Ratio)</del>
-  - Ip Address <del>v4</del> and v6
+  - <del>Ip Address v4 and v6</del>
   - HTTP/HTTPS URL
   - <del>Lorem Ipsum text</del>
   - DateTimes (based on range or sequence)
@@ -104,4 +104,5 @@ You can also use Samsui's fake data generator to fill your objects with real var
   - <del>GPS latitude / longitude</del> and paths
   - Handphone numbers (based on country formats)
   - Random amount of money, colors
+  - Images (Avatar, Sized)
 - Generation of Factory definitions to PHP classes directly
