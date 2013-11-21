@@ -105,4 +105,5 @@ You can also use Samsui's fake data generator to fill your objects with real var
   - Handphone numbers (based on country formats)
   - Random amount of money, colors
   - Images (Avatar, Sized)
+- Improved JSON reader
 - Generation of Factory definitions to PHP classes directly
