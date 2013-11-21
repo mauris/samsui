@@ -12,7 +12,7 @@ Samsui is a PHP library that manages its dependencies using [Composer](http://ge
 
     {
         "require": {
-			"mauris/samsui": "1.0.*"
+          "mauris/samsui": "1.0.*"
         }
     }
 
@@ -96,7 +96,7 @@ You can also use Samsui's fake data generator to fill your objects with real var
   - <del>Age (based on age groups defined)</del>
   - <del>Gender (with Natural Birth Ratio)</del>
   - <del>Ip Address v4 and v6</del>
-  - HTTP/HTTPS URL
+  - HTTP/HTTPS URL and <del>domain names</del>
   - <del>Lorem Ipsum text</del>
   - DateTimes (based on range or sequence)
   - Serial numbers (barcode standards)
