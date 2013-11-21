@@ -1,0 +1,16 @@
+{
+    "profiles": [
+        "https://facebook.com/{name}",
+        "https://twitter.com/{name}",
+        "http://{name}.deviantart.com/",
+        "http://{name}.tumblr.com/",
+        "http://stackoverflow.com/users/{int}/{name}",
+        "https://bitbucket.org/{name}",
+        "http://about.me/{name}",
+        "https://github.com/{name}",
+        "https://coderwall.com/{name}",
+        "http://{name}.blogspot.com/",
+        "http://instagram.com/{name}",
+        "http://{name}.wordpress.com/"
+    ]
+}
