@@ -24,7 +24,7 @@ class Url extends BaseProvider
         $parts = json_decode(file_get_contents(__DIR__ . '/Resource/urls.json'), true);
         $parts = $parts['parts'];
         $path = '';
-        for ($i = 0; $i < $partCount; $) {
+        for ($i = 0; $i < $partCount; ++$i) {
             $path .= '/' . $this->generator->math->randomArrayValue($parts);
         }
         return $path;
