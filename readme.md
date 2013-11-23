@@ -1,4 +1,6 @@
-#Samsui [![Build Status](https://travis-ci.org/mauris/samsui.png?branch=master)](https://travis-ci.org/mauris/samsui)
+#Samsui
+
+[![Build Status](https://travis-ci.org/mauris/samsui.png?branch=master)](https://travis-ci.org/mauris/samsui) [![Latest Stable Version](https://poser.pugx.org/mauris/samsui/v/stable.png)](https://packagist.org/packages/mauris/samsui) [![Total Downloads](https://poser.pugx.org/mauris/samsui/downloads.png)](https://packagist.org/packages/mauris/samsui)
 
 Samsui is a factory library for building PHP objects useful for setting up test data in your applications. It is mainly inspired by [Rosie](https://github.com/bkeepers/rosie) for JavaScript and [factory_girl](https://github.com/thoughtbot/factory_girl) for Ruby.
 
