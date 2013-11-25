@@ -9,4 +9,9 @@ class Hash extends BaseProvider
         $base = $this->generator->math->between() . $this->generator->string->alphanumeric('20') . time();
         return hash($algorithm, $base);
     }
+
+    public function __call($name, array $args)
+    {
+        return $this->hash($name);
+    }
 }
