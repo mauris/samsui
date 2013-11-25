@@ -20,5 +20,13 @@ class HashTest extends PHPUnit_Framework_TestCase
     {
         $provider = new Hash($this->generator);
         $this->assertRegExp('/^[a-f0-9]{40}$/', $provider->hash('sha1'));
+        $this->assertRegExp('/^[a-f0-9]{64}$/', $provider->hash('sha256'));
+    }
+
+    public function testSugarCall()
+    {
+        $provider = new Hash($this->generator);
+        $this->assertRegExp('/^[a-f0-9]{40}$/', $provider->sha1());
+        $this->assertRegExp('/^[a-f0-9]{64}$/', $provider->sha256());
     }
 }
