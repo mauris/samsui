@@ -95,7 +95,7 @@ You can also use Samsui's fake data generator to fill your objects with real var
 - Implementation of Data Generators for use with attributes
   - Names (different locale)
   - Email addresses
-  - Addresses (from different countries) and Postal Codes
+  - Addresses and Postal Codes
   - <del>Age (based on age groups defined)</del>
   - <del>Gender (with Natural Birth Ratio)</del>
   - <del>Ip Address v4 and v6</del>
@@ -105,7 +105,7 @@ You can also use Samsui's fake data generator to fill your objects with real var
   - Serial numbers (barcode standards)
   - <del>Hash functions output (SHA-1, SHA-256 etc.)</del>
   - <del>GPS latitude / longitude, land coordiates</del> and paths
-  - Handphone numbers (based on country formats)
+  - Handphone numbers
   - Random amount of money, colors
   - Images (Avatar, Sized)
 - Improved JSON reader
