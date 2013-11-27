@@ -18,6 +18,6 @@ class EmailTest extends PHPUnit_Framework_TestCase
     public function testDomain()
     {
         $provider = new Email($this->generator);
-        $this->assertRegExp('/^[a-z]+\.[a-z]+$/i', $provider->domain());
+        $this->assertRegExp('/^[a-z\-\.]+$/i', $provider->domain());
     }
 }
