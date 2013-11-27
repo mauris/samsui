@@ -27,7 +27,7 @@ class UrlTest extends PHPUnit_Framework_TestCase
     {
         $provider = new Url($this->generator);
         $name = $provider->commonDomains();
-        $this->assertRegExp('/^[a-z\.]+$/i', $name);
+        $this->assertRegExp('/^[a-z\-\.]+$/i', $name);
     }
 
     public function testPath()
