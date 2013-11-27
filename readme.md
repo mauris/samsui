@@ -91,6 +91,7 @@ You can also use Samsui's fake data generator to fill your objects with real var
 
 ##Upcoming
 
+- Generation of data based on locale (location+language)
 - Implementation of Data Generators for use with attributes
   - Names (different locale)
   - Email addresses
@@ -103,7 +104,7 @@ You can also use Samsui's fake data generator to fill your objects with real var
   - DateTimes (based on range or sequence)
   - Serial numbers (barcode standards)
   - <del>Hash functions output (SHA-1, SHA-256 etc.)</del>
-  - <del>GPS latitude / longitude</del> and paths
+  - <del>GPS latitude / longitude, land coordiates</del> and paths
   - Handphone numbers (based on country formats)
   - Random amount of money, colors
   - Images (Avatar, Sized)
