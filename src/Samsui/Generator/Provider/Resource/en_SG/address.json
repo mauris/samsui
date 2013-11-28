@@ -1,6 +1,6 @@
 {
     "template" : "{block} {street}, {unit}, {country} {postal}",
-    "tags" : {
+    "parts" : {
         "block" : {
             "provider": "math",
             "method": "between",
@@ -8,7 +8,7 @@
         },
         "street": {
             "template": "{name} {type}",
-            "tags": {
+            "parts": {
                 "name": {
                     "list": "streetNames"
                 },
@@ -19,7 +19,7 @@
         },
         "unit": {
             "template": "#{floor}-{unit}",
-            "tags": {
+            "parts": {
                 "floor": {
                     "provider": "math",
                     "method": "between",
