@@ -18,9 +18,19 @@ class Locale extends BaseProvider
 
     public function fetch($name)
     {
-        $file = __DIR__ . '/Resource/' . $this->locale . '/' . $name . '.json';
+        $nameparts = explode('.', $name);
+        $filename = array_shift($nameparts);
+        $file = __DIR__ . '/Resource/' . $this->locale . '/' . $filename . '.json';
         if (is_file($file)) {
-            return json_decode(file_get_contents($file), true);
+            $data = json_decode(file_get_contents($file), true);
+            foreach ($nameparts as $part) {
+                if (isset($data['parts']) && isset($data['parts'][$part])) {
+                    $data = $data['parts'][$part];
+                } else {
+                    break;
+                }
+            }
+            return $data;
         }
     }
 }
