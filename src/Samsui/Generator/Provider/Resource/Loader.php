@@ -22,7 +22,9 @@ class Loader
         $data = array();
         foreach ($parts as $name => $part) {
             $name = '{' . $name . '}';
-            if (isset($part['provider'])) {
+            if (!is_array($part)) {
+                $data[$name] = $part;
+            } elseif (isset($part['provider'])) {
                 $provider = $part['provider'];
                 $method = $part['method'];
                 $args = isset($part['args']) ? $part['args'] : array();
