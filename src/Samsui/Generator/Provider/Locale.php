@@ -31,7 +31,9 @@ class Locale extends BaseProvider
                     break;
                 }
             }
-            $data['lists'] = $lists;
+            if (is_array($data)) {
+                $data['lists'] = $lists;
+            }
             return $data;
         }
     }
