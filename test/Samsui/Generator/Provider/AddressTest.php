@@ -23,4 +23,11 @@ class AddressTest extends PHPUnit_Framework_TestCase
         $address = $provider->random();
         $this->assertTrue(strlen($address) > 0);
     }
+
+    public function testPostal()
+    {
+        $provider = new Address($this->generator);
+        $postal = $provider->postal();
+        $this->assertTrue(strlen($postal) == 6);
+    }
 }
