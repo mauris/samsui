@@ -23,12 +23,12 @@
                 "floor": {
                     "provider": "math",
                     "method": "between",
-                    "args": [1, 30],
+                    "args": [1, 30]
                 },
                 "unit": {
                     "provider": "math",
                     "method": "between",
-                    "args": [10, 9000],
+                    "args": [10, 9000]
                 }
             }
         },
@@ -103,7 +103,7 @@
             "Ubi",
             "Ulu Pandan",
             "Mayflower",
-            "Mimosa"
+            "Mimosa",
             "Middle",
             "Oxford",
             "Oxley",
