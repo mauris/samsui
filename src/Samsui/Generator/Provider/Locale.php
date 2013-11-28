@@ -23,6 +23,7 @@ class Locale extends BaseProvider
         $file = __DIR__ . '/Resource/' . $this->locale . '/' . $filename . '.json';
         if (is_file($file)) {
             $data = json_decode(file_get_contents($file), true);
+            $lists = isset($data['lists']) ? $data['lists'] : array();
             foreach ($nameparts as $part) {
                 if (isset($data['parts']) && isset($data['parts'][$part])) {
                     $data = $data['parts'][$part];
