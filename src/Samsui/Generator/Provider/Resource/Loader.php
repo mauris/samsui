@@ -13,29 +13,29 @@ class Loader
         $this->generator = $generator;
     }
 
-    public function load($resource)
+    public function load($resource, $lists)
     {
-        $template = $resource['template'];
-        $parts = $resource['parts'];
-        $lists = $resource['lists'];
+        if (!is_array($resource)) {
+            return $resource;
+        } elseif (isset($resource['provider'])) {
+            $provider = $resource['provider'];
+            $method = $resource['method'];
+            $args = isset($resource['args']) ? $resource['args'] : array();
+            $result = call_user_func_array(array($this->generator->$provider, $method), $args);
+            return $result;
+        } elseif (isset($resource['list'])) {
+            return $this->generator->math->randomArrayValue($lists[$resource['list']]);
+        } else {
+            $template = $resource['template'];
+            $parts = $resource['parts'];
 
-        $data = array();
-        foreach ($parts as $name => $part) {
-            $name = '{' . $name . '}';
-            if (!is_array($part)) {
-                $data[$name] = $part;
-            } elseif (isset($part['provider'])) {
-                $provider = $part['provider'];
-                $method = $part['method'];
-                $args = isset($part['args']) ? $part['args'] : array();
-                $data[$name] = call_user_func_array(array($this->generator->$provider, $method), $args);
-            } elseif (isset($part['list'])) {
-                $data[$name] = $this->generator->math->randomArrayValue($lists[$part['list']]);
-            } else {
-                $part['lists'] = $lists;
-                $data[$name] = $this->load($part);
+            $data = array();
+            foreach ($parts as $name => $part) {
+                $name = '{' . $name . '}';
+                $data[$name] = $this->load($part, $lists);
             }
+            return str_replace(array_keys($data), $data, $template);
+
         }
-        return str_replace(array_keys($data), $data, $template);
     }
 }
