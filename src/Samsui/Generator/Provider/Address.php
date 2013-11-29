@@ -23,4 +23,13 @@ class Address extends BaseProvider
         $loader = new ResourceLoader($this->generator);
         return $loader->load($resource, $lists);
     }
+
+    public function street()
+    {
+        $resource = $this->generator->locale->fetch('address.street');
+        $lists = isset($resource['lists']) ? $resource['lists'] : array();
+        unset($resource['lists']);
+        $loader = new ResourceLoader($this->generator);
+        return $loader->load($resource, $lists);
+    }
 }
