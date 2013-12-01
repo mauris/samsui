@@ -44,4 +44,11 @@ class AddressTest extends PHPUnit_Framework_TestCase
         $unit = $provider->unit();
         $this->assertRegExp('/^\#\d+\-\d+$/', $unit);
     }
+
+    public function testCountry()
+    {
+        $provider = new Address($this->generator);
+        $country = $provider->country();
+        $this->assertEquals('Singapore', $country);
+    }
 }
