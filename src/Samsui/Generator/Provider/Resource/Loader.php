@@ -13,8 +13,14 @@ class Loader
         $this->generator = $generator;
     }
 
-    public function load($resource, $lists)
+    public function load($resource)
     {
+        $lists = array();
+        if (is_array($resource) && isset($resource['lists'])) {
+            $lists = $resource['lists'];
+            unset($resource['lists']);
+        }
+
         if (!is_array($resource)) {
             return $resource;
         } elseif (isset($resource['provider'])) {
