@@ -41,4 +41,13 @@ class Address extends BaseProvider
         $loader = new ResourceLoader($this->generator);
         return $loader->load($resource, $lists);
     }
+
+    public function country()
+    {
+        $resource = $this->generator->locale->fetch('address.country');
+        $lists = isset($resource['lists']) ? $resource['lists'] : array();
+        unset($resource['lists']);
+        $loader = new ResourceLoader($this->generator);
+        return $loader->load($resource, $lists);
+    }
 }
