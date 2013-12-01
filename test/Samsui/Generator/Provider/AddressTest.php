@@ -34,7 +34,14 @@ class AddressTest extends PHPUnit_Framework_TestCase
     public function testStreet()
     {
         $provider = new Address($this->generator);
-        $postal = $provider->street();
-        $this->assertTrue(strlen($postal) > 0);
+        $street = $provider->street();
+        $this->assertTrue(strlen($street) > 0);
+    }
+
+    public function testUnit()
+    {
+        $provider = new Address($this->generator);
+        $unit = $provider->unit();
+        $this->assertRegExp('/\#\d+\-\d+/', $unit);
     }
 }
