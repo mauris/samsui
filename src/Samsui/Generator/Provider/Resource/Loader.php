@@ -13,11 +13,10 @@ class Loader
         $this->generator = $generator;
     }
 
-    public function load($resource)
+    public function load($resource, $lists = array())
     {
-        $lists = array();
         if (is_array($resource) && isset($resource['lists'])) {
-            $lists = $resource['lists'];
+            $lists = array_merge($lists, $resource['lists']);
             unset($resource['lists']);
         }
 
