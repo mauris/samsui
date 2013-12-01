@@ -42,6 +42,6 @@ class AddressTest extends PHPUnit_Framework_TestCase
     {
         $provider = new Address($this->generator);
         $unit = $provider->unit();
-        $this->assertRegExp('/\#\d+\-\d+/', $unit);
+        $this->assertRegExp('/^\#\d+\-\d+$/', $unit);
     }
 }
