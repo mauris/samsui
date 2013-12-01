@@ -17,27 +17,27 @@ class Address extends BaseProvider
     {
         $resource = $this->generator->locale->fetch('address.postal');
         $loader = new ResourceLoader($this->generator);
-        return $loader->load($resource, $lists);
+        return $loader->load($resource);
     }
 
     public function street()
     {
         $resource = $this->generator->locale->fetch('address.street');
         $loader = new ResourceLoader($this->generator);
-        return $loader->load($resource, $lists);
+        return $loader->load($resource);
     }
 
     public function unit()
     {
         $resource = $this->generator->locale->fetch('address.unit');
         $loader = new ResourceLoader($this->generator);
-        return $loader->load($resource, $lists);
+        return $loader->load($resource);
     }
 
     public function country()
     {
         $resource = $this->generator->locale->fetch('address.country');
         $loader = new ResourceLoader($this->generator);
-        return $loader->load($resource, $lists);
+        return $loader->load($resource);
     }
 }
