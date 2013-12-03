@@ -51,4 +51,11 @@ class AddressTest extends PHPUnit_Framework_TestCase
         $country = $provider->country();
         $this->assertEquals('Singapore', $country);
     }
+
+    public function testBlock()
+    {
+        $provider = new Address($this->generator);
+        $block = $provider->block();
+        $this->assertInternalType('int', $block);
+    }
 }
