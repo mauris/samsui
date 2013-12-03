@@ -1,0 +1,10 @@
+{
+    "template" : "6{number}",
+    "parts" : {
+        "number": {
+            "provider": "math",
+            "method": "randomNumber",
+            "args": [7]
+        },
+    }
+}
