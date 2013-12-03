@@ -1,10 +1,14 @@
 {
-    "template" : "6{number}",
+    "template" : "{country}{number}",
     "parts" : {
+        "country": "65",
         "number": {
-            "provider": "math",
-            "method": "randomNumber",
-            "args": [7]
-        },
+            "template": "6{num}",
+            "parts": {
+                "provider": "math",
+                "method": "randomNumber",
+                "args": [7]
+            }
+        }
     }
 }
