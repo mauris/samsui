@@ -40,4 +40,11 @@ class Address extends BaseProvider
         $loader = new ResourceLoader($this->generator);
         return $loader->load($resource);
     }
+
+    public function block()
+    {
+        $resource = $this->generator->locale->fetch('address.block');
+        $loader = new ResourceLoader($this->generator);
+        return $loader->load($resource);
+    }
 }
