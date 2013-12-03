@@ -5,9 +5,11 @@
         "number": {
             "template": "6{num}",
             "parts": {
-                "provider": "math",
-                "method": "randomNumber",
-                "args": [7]
+                "num": {
+                    "provider": "math",
+                    "method": "randomNumber",
+                    "args": [7]
+                }
             }
         }
     }

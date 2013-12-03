@@ -2,6 +2,8 @@
 
 namespace Samsui\Generator\Provider;
 
+use Samsui\Generator\Provider\Resource\Loader as ResourceLoader;
+
 class Telephone extends BaseProvider
 {
     public function telephone()
