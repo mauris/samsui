@@ -23,4 +23,18 @@ class TelephoneTest extends PHPUnit_Framework_TestCase
         $telephone = $provider->telephone();
         $this->assertRegExp('/^656\d{7}$/', $telephone);
     }
+
+    public function testNumber()
+    {
+        $provider = new Telephone($this->generator);
+        $number = $provider->number();
+        $this->assertRegExp('/^\d{8}$/', $number);
+    }
+
+    public function testCountryCode()
+    {
+        $provider = new Telephone($this->generator);
+        $countryCode = $provider->countryCode();
+        $this->assertEquals('65', $countryCode);
+    }
 }
