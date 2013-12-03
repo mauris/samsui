@@ -1,0 +1,21 @@
+{
+    "template" : "{country}{number}",
+    "parts" : {
+        "country": "65",
+        "number": {
+            "template": "{pre}{num}",
+            "parts": {
+                "pre": {
+                    "provider": "math",
+                    "method": "between",
+                    "args": [8, 9]
+                },
+                "num": {
+                    "provider": "math",
+                    "method": "randomNumber",
+                    "args": [7]
+                }
+            }
+        }
+    }
+}
