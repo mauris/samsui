@@ -66,13 +66,15 @@ class Math extends BaseProvider
 
     public function randomWeightedArray(array $arr)
     {
-        $total = array_sum($arr);
-        $selection = $this->between(0, $total);
-        $index = 0;
-        foreach ($arr as $item => $weight) {
-            $index += $weight;
-            if ($index >= $selection) {
-                return $item;
+        if ($arr) {
+            $total = array_sum($arr)  * 1000 - 1;
+            $selection = $this->between(0, $total);
+            $index = 0;
+            foreach ($arr as $item => $weight) {
+                $index += $weight * 1000;
+                if ($index >= $selection) {
+                    return $item;
+                }
             }
         }
         return null;

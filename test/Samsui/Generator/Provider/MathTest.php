@@ -91,6 +91,14 @@ class MathTest extends PHPUnit_Framework_TestCase
         $this->assertInternalType('string', $value);
     }
 
+    public function testRandomWeightedArray2()
+    {
+        $provider = new Math($this->getMock('Samsui\\Generator\\GeneratorInterface'));
+        $array = array('a' => 0, 'b' => 0, 'c' => 5);
+        $value = $provider->randomWeightedArray($array);
+        $this->assertEquals('c', $value);
+    }
+
     public function testRandomWeightedArrayEmpty()
     {
         $provider = new Math($this->getMock('Samsui\\Generator\\GeneratorInterface'));
