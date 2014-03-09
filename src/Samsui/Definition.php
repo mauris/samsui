@@ -48,7 +48,7 @@ class Definition implements DefinitionInterface
     /**
      * Define an attribute to the object definition
      * @param string $name The name of the attribute
-     * @param mixed|callable The value set to the attribute. If the attribute set is callable, at build-time the value returned from the callable will be inserted.
+     * @param mixed|callable $value The value set to the attribute. If the attribute set is callable, at build-time the value returned from the callable will be inserted.
      * @return Samsui\Definition Returns the Definition for method chaining
      * @since 1.0.0
      */
