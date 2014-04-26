@@ -19,4 +19,11 @@ class LocaleTest extends PHPUnit_Framework_TestCase
         $provider = new Locale($this->generator);
         $this->assertNull($provider->fetch('non-exists'));
     }
+
+    public function testFetchDeadEnd()
+    {
+        $provider = new Locale($this->generator);
+        $provider->setLocale('en_SG');
+        $this->assertNull($provider->fetch('telephone.deadend'));
+    }
 }

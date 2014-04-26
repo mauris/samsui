@@ -28,6 +28,7 @@ class Locale extends BaseProvider
                 if (isset($data['parts']) && isset($data['parts'][$part])) {
                     $data = $data['parts'][$part];
                 } else {
+                    $data = null;
                     break;
                 }
             }
