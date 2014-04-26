@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "1f291ab24d5547d4a18cf19f0193f8df",
+    "hash": "90fb124c5608c1a78629ce8a599a69ea",
     "packages": [
         {
             "name": "packfire/fuelblade",

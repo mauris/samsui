@@ -13,6 +13,6 @@
         "packfire/fuelblade": "1.1.*"
     },
     "autoload":{
-        "psr-0": {"Samsui\\":"src"}
+        "psr-4": {"Samsui\\":"src/Samsui"}
     }
 }
