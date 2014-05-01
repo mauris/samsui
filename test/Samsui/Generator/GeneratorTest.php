@@ -1,6 +1,4 @@
-<?php
-
-namespace Samsui\Generator;
+<?php namespace Samsui\Generator;
 
 use \PHPUnit_Framework_TestCase;
 use Samsui\Generator\Provider\Math;

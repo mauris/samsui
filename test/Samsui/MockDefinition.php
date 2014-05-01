@@ -1,6 +1,4 @@
-<?php
-
-namespace Samsui;
+<?php namespace Samsui;
 
 class MockDefinition implements DefinitionInterface
 {

@@ -1,6 +1,4 @@
-<?php
-
-namespace Samsui;
+<?php namespace Samsui;
 
 use \PHPUnit_Framework_TestCase;
 
