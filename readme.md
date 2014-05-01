@@ -1,6 +1,6 @@
 #Samsui
 
-[![Build Status](https://travis-ci.org/mauris/samsui.png?branch=master)](https://travis-ci.org/mauris/samsui) [![Latest Stable Version](https://poser.pugx.org/mauris/samsui/v/stable.png)](https://packagist.org/packages/mauris/samsui) [![Total Downloads](https://poser.pugx.org/mauris/samsui/downloads.png)](https://packagist.org/packages/mauris/samsui)
+[![Build Status](https://travis-ci.org/mauris/samsui.png?branch=master)](https://travis-ci.org/mauris/samsui) [![Latest Stable Version](https://poser.pugx.org/mauris/samsui/v/stable.png)](https://packagist.org/packages/mauris/samsui) [![Total Downloads](https://poser.pugx.org/mauris/samsui/downloads.png)](https://packagist.org/packages/mauris/samsui) ![](http://img.shields.io/badge/license-BSD%203--Clause-brightgreen.svg) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mauris/samsui/badges/quality-score.png?s=6b2205353be4190d48d7ba39dbf8f072d78e76ce)](https://scrutinizer-ci.com/g/mauris/samsui/) [![Code Coverage](https://scrutinizer-ci.com/g/mauris/samsui/badges/coverage.png?s=464892ae6edf1ce667b7d11ae0fb3216bc33470d)](https://scrutinizer-ci.com/g/mauris/samsui/)
 
 Samsui is a factory library for building PHP objects useful for setting up test data in your applications. It is mainly inspired by [Rosie](https://github.com/bkeepers/rosie) for JavaScript and [factory_girl](https://github.com/thoughtbot/factory_girl) for Ruby.
 
@@ -8,9 +8,15 @@ Samsui is a factory library for building PHP objects useful for setting up test 
 
 With Samsui, you can quickly build prototype application and generate as many data as you need for testing your prototype.
 
+- Samsui was created by and maintained by [Sam Yong](https://github.com/mauris).
+- Samsui uses [Travis CI](https://travis-ci.org/mauris/samsui) to check that the code works.
+- Samsui uses [Scrutinizer CI] to check code quality and test coverage.
+- Samsui uses [Composer](https://getcomposer.org/) to load and manage its dependencies.
+- Samsui is licensed under the BSD 3-Clause license.
+
 ##Installation
 
-Samsui is a PHP library that manages its dependencies using [Composer](http://getcomposer.org). You can directly use [Samsui](https://packagist.org/packages/mauris/samsui/) in your application through Composer as well:
+Samsui is a PHP library that manages its dependencies using [Composer](http://getcomposer.org). You can directly use [Samsui](https://packagist.org/packages/mauris/samsui/) in your application through Composer:
 
     {
         "require": {
@@ -53,11 +59,11 @@ You can build one at a time, or hundreds of them on the go!
 The output of a person object would be (well, after JSON encoding):
 
     {
-        personId: 1,
-        firstName: 'James',
-        lastName: 'Clark',
-        email: 'james.clark@example.com',
-        createdTime: 1383465074
+        "personId": "1",
+        "firstName": "James",
+        "lastName": "Clark",
+        "email": "james.clark@example.com",
+        "createdTime": "1383465074"
     }
 
 You can also use Samsui's fake data generator to fill your objects with real variety and randomity:
