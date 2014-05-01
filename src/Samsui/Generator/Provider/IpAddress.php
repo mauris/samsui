@@ -2,31 +2,30 @@
 
 class IpAddress extends BaseProvider
 {
-    public function v4($ip1 = null, $ip2 = null, $ip3 = null, $ip4 = null)
+    protected function process($count, $args, $generator, $imploder)
     {
-        $args = func_get_args();
         $result = array();
-        for ($i = 0; $i < 4; ++$i) {
+        for ($i = 0; $i < $count; ++$i) {
             if (isset($args[$i])) {
                 $result[] = $args[$i];
             } else {
-                $result[] = $this->generator->math->between(0, 255);
+                $result[] = call_user_func($generator, $this->generator);
             }
         }
-        return implode('.', $result);
+        return implode($imploder, $result);
     }
 
-    public function v6($ip1 = null, $ip2 = null, $ip3 = null, $ip4 = null, $ip5 = null, $ip6 = null, $ip7 = null, $ip8 = null)
+    public function v4()
     {
-        $args = func_get_args();
-        $result = array();
-        for ($i = 0; $i < 8; ++$i) {
-            if (isset($args[$i])) {
-                $result[] = $args[$i];
-            } else {
-                $result[] = $this->generator->math->hex(($this->generator->math->between(0, 65535)), 4);
-            }
-        }
-        return implode(':', $result);
+        return $this->process(4, func_get_args(), function ($g) {
+            return $g->math->between(0, 255);
+        }, '.');
+    }
+
+    public function v6()
+    {
+        return $this->process(8, func_get_args(), function ($g) {
+            return $g->math->hex(($g->math->between(0, 65535)), 4);
+        }, ':');
     }
 }
