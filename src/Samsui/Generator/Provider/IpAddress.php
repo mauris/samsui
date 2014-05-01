@@ -4,19 +4,16 @@ class IpAddress extends BaseProvider
 {
     public function v4($ip1 = null, $ip2 = null, $ip3 = null, $ip4 = null)
     {
-        if ($ip1 === null) {
-            $ip1 = $this->generator->math->between(0, 255);
+        $args = func_get_args();
+        $result = array();
+        for ($i = 0; $i < 4; ++$i) {
+            if (isset($args[$i])) {
+                $result[] = $args[$i];
+            } else {
+                $result[] = $this->generator->math->between(0, 255);
+            }
         }
-        if ($ip2 === null) {
-            $ip2 = $this->generator->math->between(0, 255);
-        }
-        if ($ip3 === null) {
-            $ip3 = $this->generator->math->between(0, 255);
-        }
-        if ($ip4 === null) {
-            $ip4 = $this->generator->math->between(0, 255);
-        }
-        return $ip1 . '.' . $ip2 . '.' . $ip3 . '.' . $ip4;
+        return implode('.', $result);
     }
 
     public function v6($ip1 = null, $ip2 = null, $ip3 = null, $ip4 = null, $ip5 = null, $ip6 = null, $ip7 = null, $ip8 = null)
