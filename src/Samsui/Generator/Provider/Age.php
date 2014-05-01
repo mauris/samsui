@@ -15,12 +15,19 @@ class Age extends BaseProvider
         return $age;
     }
 
+    /**
+     * @param integer $lower
+     * @param integer $upper
+     */
     public function between($lower, $upper)
     {
         $age = $this->generator->math->between($lower, $upper);
         return $age;
     }
 
+    /**
+     * @param integer $age
+     */
     public function pick($age)
     {
         $age = $this->generator->math->randomArrayValue(func_get_args());

@@ -2,6 +2,9 @@
 
 class Url extends BaseProvider
 {
+    /**
+     * @return string
+     */
     public function tld()
     {
         $data = json_decode(file_get_contents(__DIR__ . '/Resource/tld.json'), true);

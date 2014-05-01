@@ -2,6 +2,10 @@
 
 class Math extends BaseProvider
 {
+    /**
+     * @param integer $number
+     * @param integer $length
+     */
     public function hex($number, $length = null)
     {
         if (is_int($number)) {
@@ -29,6 +33,9 @@ class Math extends BaseProvider
         return $random;
     }
 
+    /**
+     * @param integer $digits
+     */
     public function randomNumber($digits, $upper = null)
     {
         return $this->between(

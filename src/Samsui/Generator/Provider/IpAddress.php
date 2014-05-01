@@ -2,6 +2,11 @@
 
 class IpAddress extends BaseProvider
 {
+    /**
+     * @param integer $count
+     * @param \Closure $generator
+     * @param string $imploder
+     */
     protected function process($count, $args, $generator, $imploder)
     {
         $result = array();

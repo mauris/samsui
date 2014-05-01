@@ -8,6 +8,9 @@ class Generator implements GeneratorInterface
 
     protected static $instance;
 
+    /**
+     * @param string $name
+     */
     public function registerProvider($name, ProviderInterface $provider)
     {
         $this->providers[$name] = $provider;

@@ -12,6 +12,9 @@ class String extends BaseProvider
         return preg_replace_callback('/\?/u', array($this, 'alphabet'), $format);
     }
 
+    /**
+     * @param integer $length
+     */
     public function alphanumeric($length, $mixedCase = false)
     {
         $charset = $mixedCase

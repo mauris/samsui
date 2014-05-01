@@ -4,6 +4,9 @@ use Carbon\Carbon;
 
 class Date extends BaseProvider
 {
+    /**
+     * @param string $duration
+     */
     public function past($duration)
     {
         $lower = strtotime('-' . $duration);

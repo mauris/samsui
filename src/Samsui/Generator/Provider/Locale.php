@@ -4,6 +4,9 @@ class Locale extends BaseProvider
 {
     protected $locale;
 
+    /**
+     * @param string $locale
+     */
     public function setLocale($locale)
     {
         $this->locale = $locale;
@@ -14,6 +17,9 @@ class Locale extends BaseProvider
         return $this->locale;
     }
 
+    /**
+     * @param string $name
+     */
     public function fetch($name)
     {
         $nameparts = explode('.', $name);
