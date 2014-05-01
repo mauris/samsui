@@ -60,6 +60,9 @@ class Lipsum extends BaseProvider
         return implode(' ', $result);
     }
 
+    /**
+     * @param integer $numberOfWords
+     */
     public function sentence($numberOfWords = null)
     {
         if (!$numberOfWords) {
@@ -69,6 +72,9 @@ class Lipsum extends BaseProvider
         return ucfirst($words) . '.';
     }
 
+    /**
+     * @param integer $numberOfSentence
+     */
     public function paragraph($numberOfSentence = null)
     {
         if (!$numberOfSentence) {
@@ -81,6 +87,9 @@ class Lipsum extends BaseProvider
         return implode(' ', $result);
     }
 
+    /**
+     * @param integer $numberOfParagraphs
+     */
     public function paragraphs($numberOfParagraphs = null, $breakline = "\n\n")
     {
         if (!$numberOfParagraphs) {
