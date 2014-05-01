@@ -21,4 +21,12 @@ class DateTest extends PHPUnit_Framework_TestCase
         $this->assertInstanceOf('Carbon\\Carbon', $result);
         $this->assertTrue($result->timestamp > strtotime('- 2 days') && $result->timestamp < time());
     }
+
+    public function testFarFuture()
+    {
+        $provider = new Date($this->generator);
+        $result = $provider->farFuture(8);
+        $this->assertInstanceOf('Carbon\\Carbon', $result);
+        $this->assertTrue($result->timestamp >= strtotime('+7 years') && $result->timestamp <= strtotime('+9 years'));
+    }
 }
