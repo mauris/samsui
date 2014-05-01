@@ -1,6 +1,6 @@
 #Samsui
 
-[![Build Status](https://travis-ci.org/mauris/samsui.png?branch=master)](https://travis-ci.org/mauris/samsui) [![Latest Stable Version](https://poser.pugx.org/mauris/samsui/v/stable.png)](https://packagist.org/packages/mauris/samsui) [![Total Downloads](https://poser.pugx.org/mauris/samsui/downloads.png)](https://packagist.org/packages/mauris/samsui) ![](http://img.shields.io/badge/license-BSD%203--Clause-brightgreen.svg) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mauris/samsui/badges/quality-score.png?s=6b2205353be4190d48d7ba39dbf8f072d78e76ce)](https://scrutinizer-ci.com/g/mauris/samsui/) [![Code Coverage](https://scrutinizer-ci.com/g/mauris/samsui/badges/coverage.png?s=464892ae6edf1ce667b7d11ae0fb3216bc33470d)](https://scrutinizer-ci.com/g/mauris/samsui/)
+[![Build Status](http://img.shields.io/travis/mauris/samsui.svg)](https://travis-ci.org/mauris/samsui) [![Latest Stable Version](http://img.shields.io/packagist/v/mauris/samsui.svg)](https://packagist.org/packages/mauris/samsui) [![Total Downloads](http://img.shields.io/packagist/dm/mauris/samsui.svg)](https://packagist.org/packages/mauris/samsui) [![](http://img.shields.io/badge/license-BSD%203--Clause-brightgreen.svg)](license.md) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mauris/samsui/badges/quality-score.png?s=6b2205353be4190d48d7ba39dbf8f072d78e76ce)](https://scrutinizer-ci.com/g/mauris/samsui/) [![Code Coverage](https://scrutinizer-ci.com/g/mauris/samsui/badges/coverage.png?s=464892ae6edf1ce667b7d11ae0fb3216bc33470d)](https://scrutinizer-ci.com/g/mauris/samsui/)
 
 Samsui is a factory library for building PHP objects useful for setting up test data in your applications. It is mainly inspired by [Rosie](https://github.com/bkeepers/rosie) for JavaScript and [factory_girl](https://github.com/thoughtbot/factory_girl) for Ruby.
 
@@ -12,7 +12,7 @@ With Samsui, you can quickly build prototype application and generate as many da
 - Samsui uses [Travis CI](https://travis-ci.org/mauris/samsui) to check that the code works.
 - Samsui uses [Scrutinizer CI] to check code quality and test coverage.
 - Samsui uses [Composer](https://getcomposer.org/) to load and manage its dependencies.
-- Samsui is licensed under the BSD 3-Clause license.
+- Samsui is licensed under the [BSD 3-Clause](license.md) license.
 
 ##Installation
 
