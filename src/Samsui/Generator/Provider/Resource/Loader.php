@@ -40,7 +40,6 @@ class Loader
                 $data[$name] = $this->load($part, $lists);
             }
             return str_replace(array_keys($data), $data, $template);
-
         }
     }
 }

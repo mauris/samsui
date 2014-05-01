@@ -66,6 +66,7 @@ class Math extends BaseProvider
 
     public function randomWeightedArray(array $arr)
     {
+        $result = null;
         if ($arr) {
             $total = array_sum($arr)  * 1000 - 1;
             $selection = $this->between(0, $total);
@@ -73,10 +74,11 @@ class Math extends BaseProvider
             foreach ($arr as $item => $weight) {
                 $index += $weight * 1000;
                 if ($index >= $selection) {
-                    return $item;
+                    $result = $item;
+                    break;
                 }
             }
         }
-        return null;
+        return $result;
     }
 }
