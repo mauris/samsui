@@ -36,6 +36,6 @@ class DateTest extends PHPUnit_Framework_TestCase
     public function testFarFuture2()
     {
         $provider = new Date($this->generator);
-        $result = $provider->farFuture('test');
+        $provider->farFuture('test');
     }
 }
