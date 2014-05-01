@@ -1,6 +1,4 @@
-<?php
-
-namespace Samsui;
+<?php namespace Samsui;
 
 class Definition implements DefinitionInterface
 {

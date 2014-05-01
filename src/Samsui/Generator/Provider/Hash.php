@@ -1,6 +1,4 @@
-<?php
-
-namespace Samsui\Generator\Provider;
+<?php namespace Samsui\Generator\Provider;
 
 class Hash extends BaseProvider
 {

@@ -1,6 +1,4 @@
-<?php
-
-namespace Samsui;
+<?php namespace Samsui;
 
 use Packfire\FuelBlade\ConsumerInterface;
 use Packfire\FuelBlade\Container;

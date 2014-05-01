@@ -1,6 +1,4 @@
-<?php
-
-namespace Samsui\Generator;
+<?php namespace Samsui\Generator;
 
 interface GeneratorInterface
 {

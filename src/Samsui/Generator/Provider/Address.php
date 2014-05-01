@@ -1,6 +1,4 @@
-<?php
-
-namespace Samsui\Generator\Provider;
+<?php namespace Samsui\Generator\Provider;
 
 use Samsui\Generator\Provider\Resource\Loader as ResourceLoader;
 
