@@ -28,6 +28,8 @@ class Loader
             $args = isset($resource['args']) ? $resource['args'] : array();
             $result = call_user_func_array(array($this->generator->$provider, $method), $args);
             return $result;
+        } elseif (isset($resource['weighted'])) {
+            return $this->generator->math->randomWeightedArray($lists[$resource['weighted']]);
         } elseif (isset($resource['list'])) {
             return $this->generator->math->randomArrayValue($lists[$resource['list']]);
         } else {
