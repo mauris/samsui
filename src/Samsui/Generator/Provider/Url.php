@@ -23,7 +23,7 @@ class Url extends BaseProvider
     {
         $partCount = $this->generator->math->between(2, 4);
         $parts = json_decode(file_get_contents(__DIR__ . '/Resource/urls.json'), true);
-        $parts = $parts['parts'];
+        $parts = $parts['lists']['pathParts'];
         $path = '';
         $keys = array_rand($parts, $partCount);
         foreach ($keys as $key) {
