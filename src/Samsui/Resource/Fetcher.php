@@ -2,6 +2,11 @@
 
 class Fetcher implements FetcherInterface
 {
+    /**
+     * Fetch the resource based on a dot-notation path
+     * @param  string $path The path to the resource
+     * @return array|null       Returns the resource fetched, or null if not found.
+     */
     public function fetch($path)
     {
         $parts = explode('.', $path);
