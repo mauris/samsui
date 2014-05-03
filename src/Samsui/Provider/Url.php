@@ -1,5 +1,7 @@
 <?php namespace Samsui\Provider;
 
+use Samsui\Resource\Fetcher;
+
 class Url extends BaseProvider
 {
     /**
@@ -7,23 +9,25 @@ class Url extends BaseProvider
      */
     public function tld()
     {
-        $data = json_decode(file_get_contents(__DIR__ . '/Resource/tld.json'), true);
+        $fetcher = new Fetcher();
+        $data = $fetcher->fetch('urls.lists.domainTLD');
         $tld = $this->generator->math->randomWeightedArray($data);
         return $tld;
     }
 
     public function commonDomains()
     {
-        $data = json_decode(file_get_contents(__DIR__ . '/Resource/domain-names.json'), true);
-        $name = $this->generator->math->randomArrayValue($data['common']);
+        $fetcher = new Fetcher();
+        $data = $fetcher->fetch('domains.lists.common');
+        $name = $this->generator->math->randomArrayValue($data);
         return $name;
     }
 
     public function path()
     {
+        $fetcher = new Fetcher();
+        $parts = $fetcher->fetch('urls.lists.pathParts');
         $partCount = $this->generator->math->between(2, 4);
-        $parts = json_decode(file_get_contents(__DIR__ . '/Resource/urls.json'), true);
-        $parts = $parts['lists']['pathParts'];
         $path = '';
         $keys = array_rand($parts, $partCount);
         foreach ($keys as $key) {

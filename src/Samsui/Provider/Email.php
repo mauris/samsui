@@ -1,11 +1,14 @@
 <?php namespace Samsui\Provider;
 
+use Samsui\Resource\Fetcher;
+
 class Email extends BaseProvider
 {
     public function domain()
     {
-        $data = json_decode(file_get_contents(__DIR__ . '/Resource/domain-names.json'), true);
-        $name = $this->generator->math->randomArrayValue($data['email']);
+        $fetcher = new Fetcher();
+        $data = $fetcher->fetch('domains.lists.email');
+        $name = $this->generator->math->randomArrayValue($data);
         return $name;
     }
 }

@@ -1,5 +1,7 @@
 <?php namespace Samsui\Provider;
 
+use Samsui\Resource\Fetcher;
+
 class GPS extends BaseProvider
 {
     public function latitude()
@@ -24,7 +26,8 @@ class GPS extends BaseProvider
 
     public function land()
     {
-        $data = json_decode(file_get_contents(__DIR__ . '/Resource/land-gps.json'), true);
+        $fetcher = new Fetcher();
+        $data = $fetcher->fetch('gps.lists.landArea');
         $area = $this->generator->math->randomArrayValue($data);
         $latitude = $this->generator->math->between($area['min'][0], $area['max'][0]);
         $longitude = $this->generator->math->between($area['min'][1], $area['max'][1]);
