@@ -1,6 +1,6 @@
-<?php namespace Samsui\Generator\Provider;
+<?php namespace Samsui\Provider;
 
-use Samsui\Generator\Provider\Resource\Loader as ResourceLoader;
+use Samsui\Resource\Loader as ResourceLoader;
 
 class Telephone extends BaseProvider
 {

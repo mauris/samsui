@@ -1,6 +1,4 @@
-<?php
-
-namespace Samsui\Generator\Provider\Resource;
+<?php namespace Samsui\Resource;
 
 use Samsui\Generator\GeneratorInterface;
 

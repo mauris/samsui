@@ -1,4 +1,4 @@
-<?php namespace Samsui\Generator\Provider;
+<?php namespace Samsui\Provider;
 
 class Age extends BaseProvider
 {
