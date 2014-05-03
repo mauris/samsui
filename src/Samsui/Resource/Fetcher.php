@@ -1,18 +1,13 @@
 <?php namespace Samsui\Resource;
 
-class Fetcher
+class Fetcher implements FetcherInterface
 {
-    private $resourceDir;
-
-    public function __construct()
-    {
-        $this->resourceDir = realpath(__DIR__ . '/../../../data');
-    }
-
     public function fetch($path)
     {
         $parts = explode('.', $path);
-        $filename = $this->resourceDir . '/' . array_shift($parts);
+
+        $dir = realpath(__DIR__ . '/../../../data');
+        $filename = $dir . '/' . array_shift($parts);
         while (is_dir($filename)) {
             $filename .= '/' . array_shift($parts);
         }
