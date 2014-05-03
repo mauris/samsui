@@ -15,22 +15,27 @@ class Fetcher implements FetcherInterface
         if (is_file($filename)) {
             $data = json_decode(file_get_contents($filename), true);
             $lists = isset($data['lists']) ? $data['lists'] : array();
-            if (count($parts) == 2 && $parts[0] == 'lists') {
-                $data = $lists[$parts[1]];
-            } else {
-                foreach ($parts as $part) {
-                    if (isset($data['parts']) && isset($data['parts'][$part])) {
-                        $data = $data['parts'][$part];
-                    } else {
-                        $data = null;
-                        break;
-                    }
-                }
-                if (is_array($data)) {
-                    $data['lists'] = $lists;
+            return self::find($data, $lists, $parts);
+        }
+    }
+
+    protected static function find($data, $lists, $parts)
+    {
+        if (count($parts) == 2 && $parts[0] == 'lists') {
+            $data = $lists[$parts[1]];
+        } else {
+            foreach ($parts as $part) {
+                if (isset($data['parts']) && isset($data['parts'][$part])) {
+                    $data = $data['parts'][$part];
+                } else {
+                    $data = null;
+                    break;
                 }
             }
-            return $data;
+            if (is_array($data)) {
+                $data['lists'] = $lists;
+            }
         }
+        return $data;
     }
 }
