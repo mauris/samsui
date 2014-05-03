@@ -1,7 +1,7 @@
 <?php namespace Samsui\Generator;
 
 use \PHPUnit_Framework_TestCase;
-use Samsui\Generator\Provider\Math;
+use Samsui\Provider\Math;
 
 class GeneratorTest extends PHPUnit_Framework_TestCase
 {
