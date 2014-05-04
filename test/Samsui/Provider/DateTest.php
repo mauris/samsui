@@ -22,6 +22,15 @@ class DateTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($result->timestamp > strtotime('- 2 days') && $result->timestamp < time());
     }
 
+    public function testBetween()
+    {
+        $provider = new Date($this->generator);
+        $result = $provider->between('2014-02-04 00:00:00', '2014-02-06 00:00:00');
+        $this->assertInstanceOf('Carbon\\Carbon', $result);
+        $this->assertEquals('2014-02', $result->format('Y-m'));
+        $this->assertTrue(in_array($result->format('j'), array('4', '5', '6')));
+    }
+
     public function testFarFuture()
     {
         $provider = new Date($this->generator);
