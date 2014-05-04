@@ -14,28 +14,33 @@ class Loader
     public function load($resource, $lists = array())
     {
         if (is_array($resource)) {
-            if (isset($resource['lists'])) {
-                $lists = array_merge($lists, $resource['lists']);
-                unset($resource['lists']);
-            }
+            self::mergeLists($resource, $lists);
 
             if (isset($resource['provider'])) {
                 $provider = $resource['provider'];
                 $method = $resource['method'];
                 $args = isset($resource['args']) ? $resource['args'] : array();
                 $result = call_user_func_array(array($this->generator->$provider, $method), $args);
-                return $result;
             } elseif (isset($resource['weighted'])) {
-                return $this->generator->math->randomWeightedArray($lists[$resource['weighted']]);
+                $result = $this->generator->math->randomWeightedArray($lists[$resource['weighted']]);
             } elseif (isset($resource['list'])) {
-                return $this->generator->math->randomArrayValue($lists[$resource['list']]);
+                $result = $this->generator->math->randomArrayValue($lists[$resource['list']]);
             } else {
                 $template = $resource['template'];
                 $parts = $resource['parts'];
-                return $this->renderTemplate($template, $parts, $lists);
+                $result = $this->renderTemplate($template, $parts, $lists);
             }
+            return $result;
         } else {
             return $resource;
+        }
+    }
+
+    protected static function mergeLists(&$resource, &$lists)
+    {
+        if (isset($resource['lists'])) {
+            $lists = array_merge($lists, $resource['lists']);
+            unset($resource['lists']);
         }
     }
 
