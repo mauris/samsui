@@ -27,7 +27,7 @@ class Date extends BaseProvider
         $date = new Carbon($start);
         $endDate = new Carbon($end);
         while ($endDate->gt($date)) {
-            $date->add($interval);
+            $date->modify($interval);
             $result[] = $date->copy();
         }
 
