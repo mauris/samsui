@@ -20,6 +20,20 @@ class Date extends BaseProvider
         return Carbon::createFromTimestampUTC($this->generator->math->between($lower, $upper));
     }
 
+    public function interval($start, $end, $interval)
+    {
+        $result = array();
+
+        $date = new Carbon($start);
+        $endDate = new Carbon($end);
+        while ($endDate->gt($date)) {
+            $date->add($interval);
+            $result[] = $date->copy();
+        }
+
+        return $result;
+    }
+
     public function farFuture($years)
     {
         if ($years < 2) {
