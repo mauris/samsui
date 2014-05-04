@@ -13,6 +13,13 @@ class Date extends BaseProvider
         return Carbon::createFromTimestampUTC($this->generator->math->between($lower, time()));
     }
 
+    public function between($start, $end)
+    {
+        $lower = strtotime($start);
+        $upper = strtotime($end);
+        return Carbon::createFromTimestampUTC($this->generator->math->between($lower, $upper));
+    }
+
     public function farFuture($years)
     {
         if ($years < 2) {
