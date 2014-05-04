@@ -21,10 +21,17 @@ class UrlTest extends PHPUnit_Framework_TestCase
         $this->assertTrue(4 >= strlen($tld));
     }
 
-    public function testCommonDomains()
+    public function testCommonDomain()
     {
         $provider = new Url($this->generator);
-        $name = $provider->commonDomains();
+        $name = $provider->commonDomain();
+        $this->assertRegExp('/^[a-z\-\.]+$/i', $name);
+    }
+
+    public function testDomain()
+    {
+        $provider = new Url($this->generator);
+        $name = $provider->domain();
         $this->assertRegExp('/^[a-z\-\.]+$/i', $name);
     }
 

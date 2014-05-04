@@ -1,5 +1,6 @@
 <?php namespace Samsui\Provider;
 
+use Samsui\Resource\Loader as ResourceLoader;
 use Samsui\Resource\Fetcher;
 
 class Url extends BaseProvider
@@ -15,12 +16,20 @@ class Url extends BaseProvider
         return $tld;
     }
 
-    public function commonDomains()
+    public function commonDomain()
     {
         $fetcher = new Fetcher();
-        $data = $fetcher->fetch('domains.lists.common');
+        $data = $fetcher->fetch('urls.lists.commonNames');
         $name = $this->generator->math->randomArrayValue($data);
         return $name;
+    }
+
+    public function domain()
+    {
+        $fetcher = new Fetcher();
+        $resource = $fetcher->fetch('urls.domain');
+        $loader = new ResourceLoader($this->generator);
+        return $loader->load($resource);
     }
 
     public function path()
