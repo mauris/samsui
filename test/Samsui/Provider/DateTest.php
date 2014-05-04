@@ -31,6 +31,19 @@ class DateTest extends PHPUnit_Framework_TestCase
         $this->assertTrue(in_array($result->format('j'), array('4', '5', '6')));
     }
 
+    public function testInterval()
+    {
+        $provider = new Date($this->generator);
+        $startDate = new Carbon('2014-02-04 00:00:00');
+        $result = $provider->interval($startDate, '2014-02-14 00:00:00', '1 day');
+        $this->assertCount(10, $result);
+        foreach ($result as $idx => $date) {
+            $this->assertInstanceOf('Carbon\\Carbon', $date);
+            $count = $date->diffInDays($startDate);
+            $this->assertEquals($idx + 1, $count);
+        }
+    }
+
     public function testFarFuture()
     {
         $provider = new Date($this->generator);
