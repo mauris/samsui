@@ -36,12 +36,14 @@ class Url extends BaseProvider
     {
         $fetcher = new Fetcher();
         $parts = $fetcher->fetch('urls.lists.pathParts');
-        $partCount = $this->generator->math->between(2, 4);
-        $path = '';
-        $keys = array_rand($parts, $partCount);
-        foreach ($keys as $key) {
-            $path .= '/' . $parts[$key];
+        if ($parts) {
+            $partCount = $this->generator->math->between(2, 4);
+            $path = '';
+            $keys = array_rand($parts, $partCount);
+            foreach ($keys as $key) {
+                $path .= '/' . $parts[$key];
+            }
+            return $path;
         }
-        return $path;
     }
 }
