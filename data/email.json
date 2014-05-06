@@ -1,6 +1,6 @@
 {
     "lists": {
-        "email": [
+        "domains": [
             "gmail.com",
             "gmx.us",
             "hotmail.com",
@@ -9,6 +9,12 @@
             "rocketmail.com",
             "live.com",
             "yahoo.com.sg",
+            "msn.com",
+            "aol.com",
+            "verizon.net",
+            "cox.net",
+            "yahoo.ca",
+            "comcast.net",
             "mail.com",
             "outlook.com",
             "hotmail.sg"
