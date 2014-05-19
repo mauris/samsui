@@ -99,19 +99,19 @@ You can also use Samsui's fake data generator to fill your objects with real var
 
 - Generation of data based on locale (location+language)
 - Implementation of Data Generators for use with attributes
-  - Names (different locale)
-  - <del>Email addresses</del>
-  - Addresses and Postal Codes
-  - <del>Age (based on age groups defined)</del>
-  - <del>Gender (with Natural Birth Ratio)</del>
-  - <del>Ip Address v4 and v6</del>
-  - HTTP/HTTPS URL and <del>domain names</del>
-  - <del>Lorem Ipsum text</del>
-  - <del>DateTimes (based on range or sequence)</del>
-  - <del>Hash functions output (SHA-1, SHA-256 etc.)</del>
-  - <del>GPS latitude / longitude, land coordiates</del> and paths
-  - Handphone numbers
-  - Colors (RGB array, Hexadecimal)
-  - Images (Avatar, Sized)
+  - [ ] Names (different locale)
+  - [x] Email addresses
+  - [ ] Addresses and Postal Codes
+  - [x] Age (based on age groups defined)
+  - [x] Gender (with Natural Birth Ratio)
+  - [x] IP Address v4 and v6
+  - [x] URLs
+  - [x] Lorem Ipsum text
+  - [x] Date/Times (based on range or sequence)
+  - [x] Hash functions output (SHA-1, SHA-256 etc.)
+  - [x] GPS latitude / longitude, land coordiates
+  - [ ] Handphone numbers
+  - [ ] Colors (RGB array, Hexadecimal)
+  - [ ] Images (Avatar, Sized)
 - Improved JSON reader
 - Generation of Factory definitions to PHP classes directly
