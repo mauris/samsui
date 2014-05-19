@@ -7,7 +7,7 @@ class Email extends BaseProvider
     public function domain()
     {
         $fetcher = new Fetcher();
-        $data = $fetcher->fetch('domains.lists.email');
+        $data = $fetcher->fetch('email.lists.domains');
         $name = $this->generator->math->randomArrayValue($data);
         return $name;
     }
