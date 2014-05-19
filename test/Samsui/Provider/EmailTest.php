@@ -18,4 +18,10 @@ class EmailTest extends PHPUnit_Framework_TestCase
         $provider = new Email($this->generator);
         $this->assertRegExp('/^[a-z\-\.]+$/i', $provider->domain());
     }
+
+    public function testAddress()
+    {
+        $provider = new Email($this->generator);
+        $this->assertRegExp('/^[_a-z0-9-]+@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/i', $provider->address());
+    }
 }
