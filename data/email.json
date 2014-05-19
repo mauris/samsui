@@ -1,4 +1,24 @@
 {
+    "template" : "{user}@{domain}",
+    "parts": {
+        "user": {
+            "template": "{prefix}{name}{suffix}",
+            "parts": {
+                "prefix": {
+                    "list": "userprefix"
+                },
+                "name": {
+                    "list": "username"
+                },
+                "suffix": {
+                    "list": "usersuffix"
+                }
+            }
+        },
+        "domain": {
+            "list": "domains"
+        }
+    },
     "lists": {
         "domains": [
             "gmail.com",
@@ -21,6 +41,101 @@
             "qq.com",
             "singnet.com",
             "hushmail.com"
+        ],
+        "userprefix": [
+            "",
+            "the",
+            "hello",
+            "ann",
+            "my",
+            "super",
+            "real",
+            "run",
+            "ken",
+            "mart",
+            "cat",
+            "rainbow",
+            "shopper",
+            "mr",
+            "ms"
+        ],
+        "username": [
+            "anne",
+            "houston",
+            "nate",
+            "simon",
+            "rachel",
+            "geek",
+            "captain",
+            "low",
+            "man",
+            "bug",
+            "dale",
+            "wale",
+            "hunk",
+            "hock",
+            "jack",
+            "russell",
+            "bread",
+            "tom",
+            "tim",
+            "daniel",
+            "danial",
+            "worm",
+            "tale",
+            "rag",
+            "cotton",
+            "muffin",
+            "carl",
+            "coreet",
+            "coral",
+            "blue",
+            "pink",
+            "red",
+            "reader",
+            "dev"
+        ],
+        "usersuffix": [
+            "",
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "15",
+            "20",
+            "22",
+            "87",
+            "88",
+            "89",
+            "90",
+            "91",
+            "92",
+            "93",
+            "94",
+            "95",
+            "96",
+            "97",
+            "98",
+            "99",
+            "00",
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09"
         ]
     }
 }
