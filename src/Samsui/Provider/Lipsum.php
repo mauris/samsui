@@ -10,7 +10,12 @@ class Lipsum extends BaseProvider
     {
         if (!$this->words) {
             $fetcher = new Fetcher();
-            $this->words = $fetcher->fetch('lipsum.lists.words');
+            $words = $fetcher->fetch('lipsum.lists.words');
+            if ($words) {
+                $this->words = $words;
+            } else {
+                throw new \UnexpectedValueException('Could not fetch resource "lipsum.lists.words".');
+            }
         }
         return $this->generator->math->randomArrayValue($this->words);
     }
