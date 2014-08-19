@@ -111,7 +111,7 @@ You can also use Samsui's fake data generator to fill your objects with real var
   - [x] Hash functions output (SHA-1, SHA-256 etc.)
   - [x] GPS latitude / longitude, land coordiates
   - [ ] Handphone numbers
-  - [ ] Colors (RGB array, Hexadecimal)
+  - [x] Colors (RGB array, Hexadecimal)
   - [ ] Images (Avatar, Sized)
 - Improved JSON reader
 - Generation of Factory definitions to PHP classes directly
