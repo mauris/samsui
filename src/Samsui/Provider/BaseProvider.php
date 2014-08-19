@@ -1,6 +1,6 @@
 <?php namespace Samsui\Provider;
 
-use Samsui\Generator\GeneratorInterface;
+use \Samsui\Generator\GeneratorInterface;
 
 abstract class BaseProvider implements ProviderInterface
 {

@@ -1,20 +1,20 @@
 <?php namespace Samsui;
 
-use Packfire\FuelBlade\ConsumerInterface;
-use Packfire\FuelBlade\Container;
+use \Packfire\FuelBlade\ConsumerInterface;
+use \Packfire\FuelBlade\Container;
 
 class Factory implements FactoryInterface, ConsumerInterface
 {
     /**
      * The FuelBlade IoC container
-     * @var Packfire\FuelBlade\ConainerInterface
+     * @var \Packfire\FuelBlade\ConainerInterface
      * @since 1.0.0
      */
     protected $container;
 
     /**
      * The collection of object definitions
-     * @var Samsui\ObjectCollection
+     * @var \Samsui\ObjectCollection
      * @since 1.0.0
      */
     protected $objects;
@@ -33,7 +33,7 @@ class Factory implements FactoryInterface, ConsumerInterface
     /**
      * Define a object build definition
      * @param string $name The identifier of the object to be defined
-     * @return Samsui\DefinitionInterface Returns the Definition for building the object
+     * @return \Samsui\DefinitionInterface Returns the Definition for building the object
      * @since 1.0.0
      */
     public function define($name)
@@ -68,7 +68,7 @@ class Factory implements FactoryInterface, ConsumerInterface
 
     /**
      * FuelBlade IoC injection of container.
-     * @param Packfire\FuelBlade\Container $container The container for dependencies to be injected.
+     * @param \Packfire\FuelBlade\ContainerInterface $container The container for dependencies to be injected.
      * @since 1.0.0
      * @internal
      */

@@ -1,6 +1,6 @@
 <?php namespace Samsui\Generator;
 
-use Samsui\Provider\ProviderInterface;
+use \Samsui\Provider\ProviderInterface;
 
 class Generator implements GeneratorInterface
 {
