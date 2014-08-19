@@ -5,7 +5,7 @@ interface DefinitionInterface
     /**
      * Define a sequencing attribute to the object definition
      * @param string $name The name of the attribute
-     * @return Definition Returns the Definition for method chaining
+     * @return \Samsui\Definition Returns the Definition for method chaining
      * @since 1.0.0
      */
     public function sequence($name);
@@ -23,14 +23,14 @@ interface DefinitionInterface
      * Define a function to the object definition to act as an object method
      * @param string $name The name of the method
      * @param callable $closure The function or closure to be assigned.
-     * @return Definition Returns the Definition for method chaining
+     * @return \Samsui\Definition Returns the Definition for method chaining
      * @since 1.0.0
      */
     public function method($name, $closure);
 
     /**
      * Build the definition into a representative object
-     * @return Wrapper Returns the object with the compiled properties and methods.
+     * @return \Samsui\Wrapper Returns the object with the compiled properties and methods.
      * @since 1.0.0
      */
     public function build();

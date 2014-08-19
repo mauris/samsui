@@ -7,7 +7,7 @@ class Factory implements FactoryInterface, ConsumerInterface
 {
     /**
      * The FuelBlade IoC container
-     * @var \Packfire\FuelBlade\ConainerInterface
+     * @var \Packfire\FuelBlade\ContainerInterface
      * @since 1.0.0
      */
     protected $container;

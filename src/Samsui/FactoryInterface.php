@@ -5,7 +5,7 @@ interface FactoryInterface
     /**
      * Define a object build definition
      * @param string $name The identifier of the object to be defined
-     * @return Samsui\DefinitionInterface Returns the Definition for building the object
+     * @return \Samsui\DefinitionInterface Returns the Definition for building the object
      * @since 1.0.0
      */
     public function define($name);
